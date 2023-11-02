@@ -8,6 +8,7 @@ import TableRow from "@mui/material/TableRow";
 import React from "react";
 import Image from 'next/image';
 import Link from "next/link";
+import { Stack } from "@mui/system";
 
 function createData(name, details) {
   return { name, details };
@@ -86,7 +87,7 @@ const GeneralDuty = () => {
 
       <Box
         sx={{
-          background: "linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%)",
+          background: "linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%)",pt:2
         }}
       >
         <Container maxWidth="xl">
@@ -125,7 +126,9 @@ const GeneralDuty = () => {
               </Box>
             </Grid>
             <Grid item xs={12} sm={12} md={5} lg={4}>
-              <Paper>
+              
+                <Stack direction={"column"} spacing={2}>
+                <Paper >
                 <TableContainer>
                   <Table
                     sx={{
@@ -163,6 +166,8 @@ const GeneralDuty = () => {
                     </TableBody>
                   </Table>
                 </TableContainer>
+                </Paper>
+                <Paper>
                 <TableContainer>
                   <Table
                     sx={{
@@ -193,8 +198,9 @@ const GeneralDuty = () => {
                       </TableRow>
                     </TableBody>
                   </Table>
-                </TableContainer>
-              </Paper>
+                </TableContainer></Paper>
+                </Stack>
+              
             </Grid>
           </Grid>
         </Container>

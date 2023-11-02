@@ -18,10 +18,18 @@ import Image from "next/image";
 import React from "react";
 import styles from "@/styles/Home.module.css";
 import Link from "next/link";
+import { Stack } from "@mui/system";
 function createData(name, details) {
   return { name, details };
 }
-
+const course = [
+  createData("Sector", "Healthcare"),
+  createData("Sub Sector", "General Duty Assistant",),
+  createData("Occupation", "Nursing Care Assistant",),
+  createData("Reference ID", "CON/Q0602"),
+  createData("Revised", "NCO-2004/7137.2"),
+ 
+];
 const rows = [
   createData("Duration", "90 Days"),
   createData("Study Level", "12TH"),
@@ -90,7 +98,7 @@ const Electrician = () => {
       </Grid> */}
         <Box
           sx={{
-            background: "linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%)",
+            background: "linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%)",pt:2
           }}
         >
           <Container maxWidth="xl">
@@ -158,6 +166,7 @@ const Electrician = () => {
                 </Box>
               </Grid>
               <Grid item xs={12} sm={12} md={5} lg={4}>
+                <Stack direction={"column"} spacing={2}>
                 <Paper>
                   <TableContainer>
                     <Table
@@ -200,6 +209,39 @@ const Electrician = () => {
                     </Table>
                   </TableContainer>
                 </Paper>
+                
+                <Paper>
+                <TableContainer>
+                  <Table
+                    sx={{
+                      minWidth: 250,
+                      background: "linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%)",
+                    }}
+                    aria-label="caption table"
+                  >
+                    <TableHead>
+                      <TableRow>
+                        <TableCell align="center" colSpan={2}>
+                          General Duty Assistant
+                        </TableCell>
+                      </TableRow>
+                     
+                    </TableHead>
+                    <TableBody>
+                      {course.map((row) => (
+                        <TableRow key={row.name}>
+                          <TableCell component="th" scope="row">
+                            {row.name}
+                          </TableCell>
+                          <TableCell align="right">{row.details}</TableCell>
+                        </TableRow>
+                      ))}
+                      <TableRow>
+                       
+                      </TableRow>
+                    </TableBody>
+                  </Table>
+                </TableContainer></Paper></Stack>
               </Grid>
             </Grid>
           </Container>
