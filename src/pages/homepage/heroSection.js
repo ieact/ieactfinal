@@ -5,6 +5,7 @@ const HeroSection = () => {
   return (
     <Box
       width="100vw"
+      height={"100vh"}
       display="flex"
       justifyContent="flex-end"
       sx={{
@@ -17,8 +18,9 @@ const HeroSection = () => {
         position="absolute"
         left="0"
         width="100vw"
+        height={"100vh"}
         sx={{
-          height: { xs: 500, sm: 500, md: 600, lg: 789 },
+          // height: { xs: 500, sm: 500, md: 600, lg: 789 },
           display: "flex",
           justifyContent: "center",
           alignItems: "center",

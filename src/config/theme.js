@@ -1,9 +1,9 @@
-import { createTheme } from "@mui/material/styles";
+import { createTheme, responsiveFontSizes  } from "@mui/material/styles";
 import { red } from "@mui/material/colors";
 import { grey } from '@mui/material/colors';
 
 // Create a theme instance.
-const theme = createTheme({
+let theme = createTheme({
   palette: {
     // background: {
     //   default: "#132B4D"
@@ -48,10 +48,9 @@ const theme = createTheme({
   },
 
   typography: {
+
     fontFamily: ["Poppins", "sans-serif"].join(","),
     h3: {
-      
-      
         color: "#d9a60b", // Set the color for h5
       
     },
@@ -59,19 +58,11 @@ const theme = createTheme({
     "@media (min-width:900px)": {
       fontSize: "1.5rem",
     },
-    // h4: {
-    //   "@media (min-width:600px)": {
-    //     fontSize: "1.5rem",
-    //   },
-    //   "@media (min-width:900px)": {
-    //     fontSize: "1.25rem",
-    //   },
-    // },
     h2: {
-      color: "#d9a60b", // Set the color for h5
+      color: "#d9a60b", 
     },
     h5: {
-      color: "#d9a60b", // Set the color for h5
+      color: "#d9a60b", 
     },
   },
 
@@ -95,6 +86,9 @@ const theme = createTheme({
       },
     },
   },
-});
+}
 
+);
+
+theme = responsiveFontSizes(theme);
 export default theme;
