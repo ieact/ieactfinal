@@ -50,25 +50,28 @@ const theme = createTheme({
   typography: {
     fontFamily: ["Poppins", "sans-serif"].join(","),
     h3: {
-      fontSize: "2rem",
-      "@media (min-width:600px)": {
-        fontSize: "2rem",
-      },
+      
+      
+        color: "#d9a60b", // Set the color for h5
+      
     },
 
     "@media (min-width:900px)": {
       fontSize: "1.5rem",
     },
-    h4: {
-      "@media (min-width:600px)": {
-        fontSize: "1.5rem",
-      },
-      "@media (min-width:900px)": {
-        fontSize: "1.25rem",
-      },
+    // h4: {
+    //   "@media (min-width:600px)": {
+    //     fontSize: "1.5rem",
+    //   },
+    //   "@media (min-width:900px)": {
+    //     fontSize: "1.25rem",
+    //   },
+    // },
+    h2: {
+      color: "#d9a60b", // Set the color for h5
     },
     h5: {
-      color: "#0b3ed9", // Set the color for h5
+      color: "#d9a60b", // Set the color for h5
     },
   },
 

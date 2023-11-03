@@ -110,7 +110,7 @@ const Course = () => {
               <Grid item xs={12}>
               <div style={textStyles}>
 
-                <div>Courses We Offer</div>
+                <Typography variant="h3" sx={{textAlign:"center",justifyContent:"center"}}>Courses Our Offer</Typography>
                   
                </div>
               </Grid>

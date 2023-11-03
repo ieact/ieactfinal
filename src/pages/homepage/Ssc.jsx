@@ -105,7 +105,8 @@ const SscLanding = () => {
   const classes = useStyles();
 
   return (
-    <Box sx={{ m: 1 }}>
+    <div>
+    <Box >
       <div
         className={`${classes.scrollEffectText} ${
           isTextHidden ? classes.hiddenText : ""
@@ -113,7 +114,7 @@ const SscLanding = () => {
       >
         <Typography
           variant="h3"
-          sx={{ textAlign: "center", color: "secondary.main" }}
+          sx={{ textAlign: "center",justifyContent:"center",pt:"1.5rem" ,color:"black"}}
         >
           Skill Sector Council
         </Typography>
@@ -129,9 +130,9 @@ const SscLanding = () => {
               key={item.id}
               sx={{
                 textDecoration: "none",
-                width: 250,
-                m: 2,
-                mt: 3,
+                width: 270,
+                m: "2rem",
+                mt: "3rem",
                 backgroundColor:
                   hoveredItem === item.id ? "primary.light" : "#ffff",
                 borderRadius: "1rem",
@@ -194,7 +195,7 @@ const SscLanding = () => {
           ))}
         </Box>
       </Container>
-    </Box>
+    </Box></div>
   );
 };
 

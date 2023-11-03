@@ -51,7 +51,6 @@ const Footer = () => {
     if (containerRef.current) {
       observer.observe(containerRef.current);
     }
-    
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -64,7 +63,6 @@ const Footer = () => {
     textDecoration: "none", // Remove underline
     color: "inherit", // Inherit text color
   };
-
 
   return (
     <div
@@ -95,16 +93,20 @@ const Footer = () => {
             </Typography>
             <Stack direction="column" spacing={2}>
               <Link href="/" passHref>
-                <Typography>Home</Typography>
+                <Typography sx={{ textDecoration: "none" }}>Home</Typography>
               </Link>
               <Link href="/aboutus" passHref>
-                <div style={linkStyle}>About-Us</div>
+                <Typography sx={{ textDecoration: "none" }}>
+                  About-Us
+                </Typography>
               </Link>
               <Link href="/contactform/contact" passHref>
-                <div style={linkStyle}>Contact-Us</div>
+                <Typography sx={{ textDecoration: "none" }}>
+                  Contact-Us
+                </Typography>
               </Link>
               <Link href="/courses/assitantElect/Electrician" passHref>
-                <div style={linkStyle}>Courses</div>
+                <Typography sx={{ textDecoration: "none" }}>Courses</Typography>
               </Link>
             </Stack>
           </Grid>
@@ -144,7 +146,7 @@ const Footer = () => {
           >
             <Stack
               direction="row"
-              spacing={6}
+              spacing={3}
               sx={{ display: "flex", justifyContent: "center" }}
             >
               <Box

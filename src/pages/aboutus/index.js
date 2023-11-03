@@ -1,86 +1,61 @@
-import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { Box, Container, Grid, Typography } from "@mui/material";
 import React from "react";
 import Image from "next/image";
 import styles from "@/styles/Home.module.css";
+import { useMediaQuery } from '@mui/material';
+
 
 const About = () => {
+  
+  const isMobile = useMediaQuery('(max-width:600px)');
+  const imageWidth = isMobile ? 300 : 600;
+  const imageHeight = isMobile ? 300 : 600;
+  
   return (
-    <Box>
-
-<Box
-      width="100vw"
-      display="flex"
-      justifyContent="flex-end"
-      sx={{
-        position: "relative",
-        background: `url("/hero.jpg") center / cover`,
-        minHeight: { xs: 500, sm: 500, md: 800, lg: 789 },
-      }}
-    >
+    <div>
       <Box
-        position="absolute"
-        left="0"
-        width="100vw"
+        width="100%"
+        display="flex"
+        justifyContent="flex-end"
         sx={{
-          height: { xs: 500, sm: 500, md: 600, lg: 789 },
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          textAlign: "center",
-          backgroundColor: "rgba(0, 0, 0, 0.7)",
+          position: "relative",
+          background: `url("/hero.jpg") center / cover`,
+          minHeight: { xs: 500, sm: 500, md: 800, lg: 789 },
         }}
       >
-        <Typography
+        <Box
           position="absolute"
-          
+          left="0"
+          width="100%"
           sx={{
-            fontSize: { xs: 32, md: 86 },
-            color: "primary.main",
+            height: { xs: 500, sm: 500, md: 600, lg: 789 },
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            textAlign: "center",
+            backgroundColor: "rgba(0, 0, 0, 0.7)",
           }}
-        >
-          About-Us
-        </Typography>
-      </Box>
-    </Box>
-
-      <Grid item xs={12}>
-        {/* <Box
-          sx={{
-            background: "linear-gradient(140deg, #f6d365 0%, #fda085 97%)",
-          }}
-          className={styles.headerbox}
         >
           <Typography
-            variant="h3"
+            position="absolute"
             sx={{
-              textAlign: "center",
-              justifyContent: "center",
+              fontSize: { xs: 32, md: 86 },
+              color: "primary.main",
             }}
           >
-            About Us
+            About-Us
           </Typography>
-        </Box> */}
-      </Grid>
+        </Box>
+      </Box>
+
       <Container>
         <Grid container spacing={2} sx={{ marginTop: 1 }}>
-          <Grid item xs={12} sm={6} md={6} lg={6}>
-            <Image
-              src={"/bg/aboutusgirl.svg"}
-              alt={`Image`}
-              width={500}
-              height={500}
-            />
-          </Grid>
-          <Grid item xs={12} sm={6} md={6} lg={6}>
-            <Box sx={{ lineHeight: 2, justifyContent: "space-between" }}>
-              <Typography variant="h4">Introduction</Typography>
-
-              <Typography
-                variant="body1"
-                sx={{ lineHeight: 2, justifyContent: "space-between" }}
-              >
-                Indra Education and Foundation Skill Development Program
+          {/* src={"/bg/aboutusgirl.svg"} */}
+          <Grid item xs={12} sm={6} md={12} lg={12}>
+            
+          <Typography variant="h4">Introduction</Typography>
+              <Typography variant="body1" sx={{ lineHeight: 2 }}>
+                Indira Education and Foundation Skill Development Program
                 provides youth with leadership, social, communication, computers
                 and basic life skills.
                 <br />
@@ -90,8 +65,26 @@ const About = () => {
                 <br /> After completing the training program, dedicated
                 placement The group ensures that the candidates get employment
                 in various textile sectors and also facilitates them for
-                self-employment.
-                <br /> Also, work To expand the scope of opportunities, increase
+                self-employment.</Typography>
+            <Box
+              sx={{ width: "100%", display: "flex", justifyContent: "center" }}
+            >
+              <Image
+                src={"/bg/aboutusgirl.svg"}
+                alt="Image" 
+                width={imageWidth}
+                height={imageHeight}
+              />
+              </Box>
+              {/* <Box> */}
+            {/* </Box> */}
+          </Grid>
+          <Grid item xs={12} sm={6} md={12} lg={12}>
+            <Box sx={{ lineHeight: 2 }}>
+              
+              <Typography variant="body1" sx={{ lineHeight: 2 }}>
+              
+                Also, work To expand the scope of opportunities, increase
                 the recruitment partner support system and new employment
                 opportunities Investigate A typical job mapping activity is done
                 at the central level.
@@ -99,12 +92,12 @@ const About = () => {
                 skill development and Central Government schemes in the Ministry
                 of Entrepreneurship have got consultative status pan India To
                 provide necessary skills to thousands of youth.
-                <br /> The Institute&quot;s unique training approach provides
+                <br /> The Institute's unique training approach provides
                 industry-required, employability-linked appropriate skill
                 training at pace, scale and standards. Well designed to deliver.
                 <br /> Pradhan Mantri Kaushal Kendra (PMKVY) and DDU-GKY are
-                among the most important partners for the government&quot;s
-                flagship programme. Skills Foundation is one.
+                among the most important partners for the government's flagship
+                programme. Skills Foundation is one.
               </Typography>
             </Box>
           </Grid>
@@ -153,17 +146,16 @@ const About = () => {
               fields. <br />
               2. **Student-Centered Approach:** We put our students at the
               center of everything we do. Our goal is to provide a supportive
-              and inclusive environment that ensures every student&quot;s
-              success.
+              and inclusive environment that ensures every student's success.
               <br /> 3. **Industry Relevance:** We maintain a close connection
               with industry trends, ensuring that our programs are up-to-date
-              and aligned with the needs of today&quot;s job market.
+              and aligned with the needs of today's job market.
               <br /> 4. **Community Engagement:** We actively engage with the
               community, contributing to its development and supporting local
               initiatives. <br />
               5. **Personal Development:** Beyond academic achievements, we are
               committed to nurturing personal growth and character development,
-              preparing students for life&quot;s challenges.
+              preparing students for life's challenges.
             </Typography>
             <Typography variant="h3" sx={{ lineHeight: 2 }}>
               Vision Statement:
@@ -195,7 +187,7 @@ const About = () => {
           </Grid>
         </Grid>
       </Container>
-    </Box>
+    </div>
   );
 };
 

@@ -61,11 +61,9 @@ const LandingSection = () => {
         "Indira Skills arranged many events for Awareness programs & Job Melas and has a success rates of Recruitment and Placements",
     },
   ];
- 
 
   return (
-    <div style={textStyles}>
-
+    <div>
       <Box
         width="100vw"
         display="flex"
@@ -73,34 +71,18 @@ const LandingSection = () => {
         alignItems={"center"}
         sx={{
           background: " linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%)",
-          height: { xs: 1500, sm: 1200, md: 800, lg: 789 },
+          height: { xs: 1600, sm: 1200, md: 750, lg: 730 },
         }}
       >
         <Container>
-          <Grid
-            container
-            spacing={3}
-            // sx={{
-            //   justifyContent: "center",
-            //   alignItems: "center",
-            //   display: "column",
-            // }}
-          >
+          <Grid container spacing={3}>
             <Grid item xs={12}>
-              <Typography variant="h3" sx={{ textAlign: "center" }}>
-                We Offers
+              <Typography variant="h3" sx={{ p: "2rem", textAlign: "center", justifyContent: "center", alignItems: "center" }}>
+                Our Offers
               </Typography>
             </Grid>
             {jobs.map((item) => (
-              <Grid
-                item
-                key={item.id}
-                xs={12}
-                sm={6}
-                md={4}
-                lg={4}
-                sx={{ p: 2 }}
-              >
+              <Grid item key={item.id} xs={12} sm={6} md={4} lg={4} sx={{ p: 2 }}>
                 <Box
                   sx={{
                     height: "300",
@@ -127,9 +109,8 @@ const LandingSection = () => {
           </Grid>
         </Container>
       </Box>
-
     </div>
   );
 };
 
-export default LandingSection;
+export default LandingSection;

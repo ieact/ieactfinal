@@ -49,7 +49,7 @@ const Electrician = () => {
       sx={{
         position: "relative",
         background: `url("/courses/electrician.jpg") center / cover`,
-        minHeight: { xs: 500, sm: 500, md: 800, lg: 789 },
+        minHeight: { xs: 400, sm:400, md: 800, lg: 789 },
       }}
     >
       <Box

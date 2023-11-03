@@ -89,6 +89,7 @@ const YourComponent = () => {
   const classes = useStyles();
 
   return (
+    <Box>
     <div className={classes.wrapper}>
       {choose.map((item) => (
         <Card key={item.id} className={classes.card}>
@@ -123,7 +124,7 @@ const YourComponent = () => {
           </Grid>
         </Card>
       ))}
-    </div>
+    </div></Box>
   );
 };
 
