@@ -9,6 +9,17 @@ import React from "react";
 import Image from 'next/image';
 import Link from "next/link";
 import { Stack } from "@mui/system";
+import { useMediaQuery,useTheme } from "@mui/material";
+
+import ListItemText from "@mui/material/ListItemText";
+import ListItemAvatar from "@mui/material/ListItemAvatar";
+import StarHalfIcon from '@mui/icons-material/StarHalf';
+import BeachAccessIcon from "@mui/icons-material/BeachAccess";
+import WorkIcon from '@mui/icons-material/Work';
+import TrendingUpIcon from '@mui/icons-material/TrendingUp';
+import CakeIcon from '@mui/icons-material/Cake';
+import TimerIcon from '@mui/icons-material/Timer';
+
 
 function createData(name, details) {
   return { name, details };
@@ -30,60 +41,19 @@ const course = [
  
 ];
 
+
 const GeneralDuty = () => {
+  
+  const theme = useTheme();
+
+  const isMobile = useMediaQuery("(max-width:600px)");
+  const imageWidth = isMobile ? 300 : 600;
+  const imageHeight = isMobile ? 300 : 600;
+  const isMobile1 = useMediaQuery(theme.breakpoints.down('sm'));
+  const order = isMobile1 ? 2 : 1;
   return (
-    <>
-    <Box
-      width="100vw"
-      display="flex"
-      justifyContent="flex-end"
-      sx={{
-        position: "relative",
-        background: `url("/hero.jpg") center / cover`,
-        minHeight: { xs: 500, sm: 500, md: 800, lg: 789 },
-      }}
-    >
-      <Box
-        position="absolute"
-        left="0"
-        width="100vw"
-        sx={{
-          height: { xs: 500, sm: 500, md: 600, lg: 789 },
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          textAlign: "center",
-          backgroundColor: "rgba(0, 0, 0, 0.7)",
-        }}
-      >
-        <Typography
-          position="absolute"
-          
-          sx={{
-            fontSize: { xs: 32, md: 86 },
-            color: "primary.main",
-          }}
-        >
-          General Duty Assistant Nurse
-        </Typography>
-      </Box>
-    </Box>
-{/* 
-      <Box
-        width="100vw"
-        display="flex"
-        justifyContent="center"
-        alignItems="center"
-        sx={{
-          paddingBottom: 3,
-          background: "linear-gradient(140deg, #f6d365 0%, #fda085 97%)",
-          height: { xs: 150, sm: 125, md: 180, lg: 100 },
-        }}
-      >
-        <Typography variant="h3" color="secondary">
-          General Duty
-        </Typography>
-      </Box> */}
+    
+    <div>
 
       <Box
         sx={{
@@ -91,20 +61,87 @@ const GeneralDuty = () => {
         }}
       >
         <Container maxWidth="xl">
-          <Grid container spacing={3}>
-            <Grid item xs={12} sm={12} md={7} lg={8}>
+          <Grid container spacing={3} 
+            justifyContent={"center"}
+            alignItems={"center"}>
+                <Grid item xs={12}>
+                <Typography variant="h3" textAlign={"center"}>Generalduty Assistant</Typography>
+              
+              </Grid>
+
+            
+          <Grid item xs={12} md={6} lg={4} order={order}>
+              <Box sx={{display:"flex",justifyContent:"center"}}>
+              <List
+                sx={{
+                  width: "100%",
+                  maxWidth: 360,
+                  bgcolor: "background.paper",
+                }}
+              >
+                <ListItemText
+                sx={{ my: 0,textAlign:"center" }}
+                primary="Course Details"
+                primaryTypographyProps={{
+                  fontSize: 20,
+                  fontWeight: 'medium',
+                  letterSpacing: 0,
+                }}
+              />
+                <ListItem>
+                  <ListItemAvatar>
+                      <WorkIcon />
+                  </ListItemAvatar>
+                  <ListItemText primary="Job Role" secondary="Assistant Electrician" />
+                </ListItem>
+                <ListItem>
+                  <ListItemAvatar>
+                      <TimerIcon />
+                  </ListItemAvatar>
+                  <ListItemText primary="Duration" secondary="90  Days" />
+                </ListItem>
+                <ListItem>
+                  <ListItemAvatar>
+                      <BeachAccessIcon />
+                  </ListItemAvatar>
+                  <ListItemText primary="Study Level" secondary="12TH" />
+                </ListItem>
+                <ListItem>
+                  <ListItemAvatar>
+                      <StarHalfIcon />
+                  </ListItemAvatar>
+                  <ListItemText primary="Experience" secondary="0 to 1 Years" />
+                </ListItem>
+                <ListItem>
+                  <ListItemAvatar>
+                      <CakeIcon />
+                  </ListItemAvatar>
+                  <ListItemText primary="Minimum Job Entry Age" secondary="18 Years" />
+                </ListItem>
+                <ListItem>
+                  <ListItemAvatar>
+                      <TrendingUpIcon />
+                  </ListItemAvatar>
+                  <ListItemText primary="NSQF Level" secondary="4" />
+                </ListItem>
+              </List></Box>
+            </Grid>
+            <Grid item xs={12} md={6} order={1}>
+              
+            <Stack direction={isMobile1 ? 'column' : 'row'} spacing={0}>
+              {course.map((row) => (
+                <ListItem>
+                  <ListItemText primary={row.name} secondary={row.details} />
+                </ListItem>
+))}
+
+              </Stack>
               <Box
                 sx={{
                 
                   background: "linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%)",
                 }}
               >
-                 <Image
-                    src={"/courses/general.svg"}
-                    alt="Image"
-                    width={"600"}
-                    height={"600"}
-                  />
                 <Typography variant="h6">
                
                 </Typography>
@@ -125,87 +162,11 @@ const GeneralDuty = () => {
                 </Typography>
               </Box>
             </Grid>
-            <Grid item xs={12} sm={12} md={5} lg={4}>
-              
-                <Stack direction={"column"} spacing={2}>
-                <Paper >
-                <TableContainer>
-                  <Table
-                    sx={{
-                      minWidth: 250,
-                      background: "linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%)",
-                    }}
-                    aria-label="caption table"
-                  >
-                    <TableHead>
-                      <TableRow>
-                        <TableCell align="center" colSpan={2}>
-                          General Duty Assistant
-                        </TableCell>
-                      </TableRow>
-                      <TableRow>
-                        <TableCell>Job Role</TableCell>
-                        <TableCell align="right">General Duty Assistant</TableCell>
-                      </TableRow>
-                    </TableHead>
-                    <TableBody>
-                      {rows.map((row) => (
-                        <TableRow key={row.name}>
-                          <TableCell component="th" scope="row">
-                            {row.name}
-                          </TableCell>
-                          <TableCell align="right">{row.details}</TableCell>
-                        </TableRow>
-                      ))}
-                      <TableRow>
-                        <TableCell>
-                      <Link href={'/contactform/contact'}>
-                            <Button>Apply now</Button></Link>
-                          </TableCell>
-                      </TableRow>
-                    </TableBody>
-                  </Table>
-                </TableContainer>
-                </Paper>
-                <Paper>
-                <TableContainer>
-                  <Table
-                    sx={{
-                      minWidth: 250,
-                      background: "linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%)",
-                    }}
-                    aria-label="caption table"
-                  >
-                    <TableHead>
-                      <TableRow>
-                        <TableCell align="center" colSpan={2}>
-                          General Duty Assistant
-                        </TableCell>
-                      </TableRow>
-                     
-                    </TableHead>
-                    <TableBody>
-                      {course.map((row) => (
-                        <TableRow key={row.name}>
-                          <TableCell component="th" scope="row">
-                            {row.name}
-                          </TableCell>
-                          <TableCell align="right">{row.details}</TableCell>
-                        </TableRow>
-                      ))}
-                      <TableRow>
-                       
-                      </TableRow>
-                    </TableBody>
-                  </Table>
-                </TableContainer></Paper>
-                </Stack>
-              
-            </Grid>
+           
           </Grid>
         </Container>
-      </Box>
-    </>
+      </Box></div>
+    
   );
 };
 

@@ -1,118 +1,60 @@
 import {
   Box,
-  Button,
   Container,
   Grid,
-  List,
-  ListItem,
   Paper,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
   Typography,
 } from "@mui/material";
-import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
-import TableCell from "@mui/material/TableCell";
-import TableContainer from "@mui/material/TableContainer";
-import TableHead from "@mui/material/TableHead";
-import TableRow from "@mui/material/TableRow";
-import { Stack } from "@mui/system";
 import Image from "next/image";
-import Link from "next/link";
 import React from "react";
-import { useMediaQuery } from "@mui/material";
-import Timer from '@mui/icons-material/Timer';
-import School from '@mui/icons-material/School';
-import StarHalf from '@mui/icons-material/StarHalf';
-import CakeIcon from '@mui/icons-material/Cake';
+import { useMediaQuery,useTheme } from "@mui/material";
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import ListItemText from "@mui/material/ListItemText";
+import ListItemAvatar from "@mui/material/ListItemAvatar";
+import StarHalfIcon from '@mui/icons-material/StarHalf';
+import BeachAccessIcon from "@mui/icons-material/BeachAccess";
+import WorkIcon from '@mui/icons-material/Work';
 import TrendingUpIcon from '@mui/icons-material/TrendingUp';
+import CakeIcon from '@mui/icons-material/Cake';
+import TimerIcon from '@mui/icons-material/Timer';
+import { Stack } from "@mui/system";
+
 
 function createData(name, details) {
   return { name, details };
 }
-
 const course = [
   createData("Sector", "Healthcare"),
-  createData("Sub Sector", "General Duty Assistant"),
-  createData("Occupation", "Nursing Care Assistant"),
+  createData("Sub Sector", "General Duty Assistant",),
+  createData("Occupation", "Nursing Care Assistant",),
   createData("Reference ID", "CON/Q0602"),
   createData("Revised", "NCO-2004/7137.2"),
-];
-const rows = [
-  createData("Duration", "90 Days"),
-  createData("Study Level", "12TH"),
-  createData("Experience", "0 to 1 Years"),
-  createData("Minimum Job Entry Age", "18 Years"),
-  createData("NSQF Level", "4"),
-  createData("Role Description", ""),
-];
-const icons = [
-  <Timer />,
-  <School />,
-  <StarHalf />,
-  <CakeIcon />,
-  <TrendingUpIcon  />,
+ 
 ];
 
-const Electrician = () => {
+const ItHelp = () => {
+  const theme = useTheme();
+
   const isMobile = useMediaQuery("(max-width:600px)");
   const imageWidth = isMobile ? 300 : 600;
   const imageHeight = isMobile ? 300 : 600;
+  const isMobile1 = useMediaQuery(theme.breakpoints.down('sm'));
+  const order = isMobile1 ? 2 : 1;
+
   return (
     <div>
-      {/* <Box
-        width="100vw"
-        display="flex"
-        justifyContent="flex-end"
-        sx={{
-          position: "relative",
-          background: `url("/hero.jpg") center / cover`,
-          minHeight: { xs: 500, sm: 500, md: 800, lg: 789 },
-        }}
-      >
-        <Box
-          position="absolute"
-          left="0"
-          width="100vw"
-          sx={{
-            height: { xs: 500, sm: 500, md: 600, lg: 789 },
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            textAlign: "center",
-            backgroundColor: "rgba(0, 0, 0, 0.7)",
-          }}
-        >
-          <Typography
-            position="absolute"
-            sx={{
-              fontSize: { xs: 32, md: 86 },
-              color: "primary.main",
-            }}
-          >
-            Domestic IT Help Assistant
-          </Typography>
-        </Box>
-      </Box> */}
-      
-      <Box
-        width="100vw"
-        display="flex"
-        justifyContent="center"
-        alignItems="center"
-        sx={{
-          paddingBottom: 3,
-          background: "linear-gradient(140deg, #f6d365 0%, #fda085 97%)",
-          height: { xs: 150, sm: 125, md: 180, lg: 180 },
-        }}
-      >
-        <Typography variant="h3" color="secondary">
-          IT Help
-        </Typography>
-      </Box>
 
       <Box
         sx={{
           background: "linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%)",
-          pt: 2,
+          pt: 5,
         }}
       >
         <Container maxWidth="xl">
@@ -122,111 +64,78 @@ const Electrician = () => {
             justifyContent={"center"}
             alignItems={"center"}
           >
-            <Grid item xs={12} justifyContent={"center"} alignItems={"center"}>
-              <Box
+              <Grid item xs={12}>
+                <Typography variant="h3" textAlign={"center"}>IT Help Assistant</Typography>
+              
+              </Grid>
+            <Grid item xs={12} md={6} lg={4} order={order}>
+              <Box sx={{display:"flex",justifyContent:"center"}}>
+              <List
                 sx={{
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  flexDirection: { xs: "column", md: "row" },
-                  background:
-                    "linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%)",
+                  width: "100%",
+                  maxWidth: 360,
+                  bgcolor: "background.paper",
                 }}
               >
-                <Image
-                  src={"/courses/ithelp.svg"}
-                  alt="Image"
-                  width={imageWidth}
-                  height={imageHeight}
-                />
-              </Box>
+                <ListItemText
+                sx={{ my: 0,textAlign:"center" }}
+                primary="Course Details"
+                primaryTypographyProps={{
+                  fontSize: 20,
+                  fontWeight: 'medium',
+                  letterSpacing: 0,
+                }}
+              />
+                <ListItem>
+                  <ListItemAvatar>
+                      <WorkIcon />
+                  </ListItemAvatar>
+                  <ListItemText primary="Job Role" secondary="Assistant Electrician" />
+                </ListItem>
+                <ListItem>
+                  <ListItemAvatar>
+                      <TimerIcon />
+                  </ListItemAvatar>
+                  <ListItemText primary="Duration" secondary="90  Days" />
+                </ListItem>
+                <ListItem>
+                  <ListItemAvatar>
+                      <BeachAccessIcon />
+                  </ListItemAvatar>
+                  <ListItemText primary="Study Level" secondary="12TH" />
+                </ListItem>
+                <ListItem>
+                  <ListItemAvatar>
+                      <StarHalfIcon />
+                  </ListItemAvatar>
+                  <ListItemText primary="Experience" secondary="0 to 1 Years" />
+                </ListItem>
+                <ListItem>
+                  <ListItemAvatar>
+                      <CakeIcon />
+                  </ListItemAvatar>
+                  <ListItemText primary="Minimum Job Entry Age" secondary="18 Years" />
+                </ListItem>
+                <ListItem>
+                  <ListItemAvatar>
+                      <TrendingUpIcon />
+                  </ListItemAvatar>
+                  <ListItemText primary="NSQF Level" secondary="4" />
+                </ListItem>
+              </List></Box>
             </Grid>
-            <Grid item xs={12}>
-              <Stack direction={"row"} spacing={2} justifyContent={"center"}>
-                <Paper>
-                  <TableContainer>
-                    <Table
-                      sx={{
-                        minWidth: 250,
-                        background:
-                          "linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%)",
-                      }}
-                      aria-label="caption table"
-                    >
-                      <TableHead>
-                        <TableRow>
-                          <TableCell align="center" colSpan={2}>
-                            General Duty Assistant
-                          </TableCell>
-                        </TableRow>
-                        <TableRow>
-                          <TableCell>Job Role</TableCell>
-                          <TableCell align="right">
-                            General Duty Assistant
-                          </TableCell>
-                        </TableRow>
-                      </TableHead>
-                      <TableBody>
-                        {rows.map((row, index) => (
-                          <TableRow key={row.name}>
-                            <TableCell component="th" scope="row">
-                            <div style={{ display: "flex", alignItems: "center" }}>
-                              {icons[index]} {row.name}
-                              </div>
-                            </TableCell>
-                            <TableCell align="right">{row.details}</TableCell>
-                          </TableRow>
-                        ))}
-                        <TableRow>
-                          <TableCell>
-                            <Link href={"/contactform/contact"}>
-                              <Button>
-                              <div style={{ display: "flex", justifyContent: "center",  alignItems: "center"}}>
-                                Apply now
-                                </div>
-                                </Button>
-                            </Link>
-                          </TableCell>
-                        </TableRow>
-                      </TableBody>
-                    </Table>
-                  </TableContainer>
-                </Paper>
 
-                <Paper>
-                  <TableContainer>
-                    <Table
-                      sx={{
-                        minWidth: 250,
-                        background:
-                          "linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%)",
-                      }}
-                      aria-label="caption table"
-                    >
-                      <TableHead>
-                        <TableRow>
-                          <TableCell align="center" colSpan={2}>
-                            General Duty Assistant
-                          </TableCell>
-                        </TableRow>
-                      </TableHead>
-                      <TableBody>
-                        {course.map((row) => (
-                          <TableRow key={row.name}>
-                            <TableCell component="th" scope="row">
-                              {row.name}
-                            </TableCell>
-                            <TableCell align="right">{row.details}</TableCell>
-                          </TableRow>
-                        ))}
-                        <TableRow></TableRow>
-                      </TableBody>
-                    </Table>
-                  </TableContainer>
-                </Paper>
+
+            <Grid item xs={12} md={6} order={1}>
+              
+            <Stack direction={isMobile1 ? 'column' : 'row'} spacing={0}>
+              {course.map((row) => (
+                <ListItem>
+                  <ListItemText primary={row.name} secondary={row.details} />
+                </ListItem>
+))}
+
               </Stack>
-            </Grid>
-            <Grid item xs={12}>
               <Box>
                 <Typography variant="body1" lineHeight={2}>
                   Domestic IT Help desk Attendant in the IT-ITES Industry is
@@ -269,4 +178,4 @@ const Electrician = () => {
   );
 };
 
-export default Electrician;
+export default ItHelp;

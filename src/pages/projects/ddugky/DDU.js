@@ -3,41 +3,23 @@ import React from "react";
 
 const DDU = () => {
   return (
-    <Box>
-      <Box
-      width="100vw"
-      display="flex"
-      justifyContent="flex-end"
-      sx={{
-        position: "relative",
-        background: `url("/hero.jpg") center / cover`,
-        minHeight: { xs: 500, sm: 500, md: 800, lg: 789 },
-      }}
-    >
-      <Box
-        position="absolute"
-        left="0"
+    <div>
+<Box>
+    <Box
         width="100vw"
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
         sx={{
-          height: { xs: 500, sm: 500, md: 600, lg: 789 },
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          textAlign: "center",
-          backgroundColor: "rgba(0, 0, 0, 0.7)",
+          background: "linear-gradient(140deg, #f6d365 0%, #fda085 97%)",
+          height: { xs: 100, sm: 125, md: 150, lg: 150 },
+          marginTop: "4rem",
         }}
       >
-        <Typography
-          position="absolute"
-          
-          sx={{
-            fontSize: { xs: 32, md: 86 },
-            color: "primary.main",
-          }}
-        >DDU- GKY
+        <Typography variant="h3" color="secondary">
+          DDU-GKY
         </Typography>
       </Box>
-    </Box>
       <Grid item xs={12}>
         {/* <Box sx={{ height: "100" }}>
           <Typography
@@ -129,7 +111,7 @@ const DDU = () => {
           </Grid>
         
       </Container>
-    </Box>
+    </Box></div>
   );
 };
 

@@ -1,4 +1,5 @@
 import {
+  Avatar,
   Box,
   Button,
   Container,
@@ -8,6 +9,7 @@ import {
   Paper,
   Typography,
 } from "@mui/material";
+import { useMediaQuery,useTheme } from "@mui/material";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -19,6 +21,17 @@ import React from "react";
 import styles from "@/styles/Home.module.css";
 import Link from "next/link";
 import { Stack } from "@mui/system";
+
+import ListItemText from "@mui/material/ListItemText";
+import ListItemAvatar from "@mui/material/ListItemAvatar";
+import StarHalfIcon from '@mui/icons-material/StarHalf';
+import BeachAccessIcon from "@mui/icons-material/BeachAccess";
+import WorkIcon from '@mui/icons-material/Work';
+import TrendingUpIcon from '@mui/icons-material/TrendingUp';
+import CakeIcon from '@mui/icons-material/Cake';
+import TimerIcon from '@mui/icons-material/Timer';
+
+
 function createData(name, details) {
   return { name, details };
 }
@@ -39,97 +52,104 @@ const rows = [
   createData("Role Description", ""),
 ];
 
-const Electrician = () => {
-  return (
-    <>
-    <Box
-      width="100vw"
-      display="flex"
-      justifyContent="flex-end"
-      sx={{
-        position: "relative",
-        background: `url("/courses/electrician.jpg") center / cover`,
-        minHeight: { xs: 400, sm:400, md: 800, lg: 789 },
-      }}
-    >
-      <Box
-        position="absolute"
-        left="0"
-        width="100vw"
-        sx={{
-          height: { xs: 500, sm: 500, md: 600, lg: 789 },
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          textAlign: "center",
-          backgroundColor: "rgba(0, 0, 0, 0.7)",
-        }}
-      >
-        <Typography
-          position="absolute"
-          
-          sx={{
-            fontSize: { xs: 32, md: 86 },
-            color: "primary.main",
-          }}
-        >Assitant Electrician
-        </Typography>
-      </Box>
-    </Box>
 
-      <Box>
-      {/* <Grid item xs={12}>
+const Electrician = () => {
+  
+  const theme = useTheme();
+
+  const isMobile = useMediaQuery("(max-width:600px)");
+  const imageWidth = isMobile ? 300 : 600;
+  const imageHeight = isMobile ? 300 : 600;
+  const isMobile1 = useMediaQuery(theme.breakpoints.down('sm'));
+  const order = isMobile1 ? 2 : 1;
+  return (
+    <><div>  
         <Box
           sx={{
-            background: "linear-gradient(140deg, #f6d365 0%, #fda085 97%)",
-          }}
-          className={styles.headerbox}
-        >
-          <Typography
-            variant="h3"
-            sx={{
-              textAlign: "center",
-              justifyContent: "center",
-            }}
-          >
-            Electrician
-          </Typography>
-        </Box>
-      </Grid> */}
-        <Box
-          sx={{
-            background: "linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%)",pt:2
+            background: "linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%)",pt:5
           }}
         >
           <Container maxWidth="xl">
-            <Grid container spacing={2}>
-              <Grid item xs={12} sm={12} md={7} lg={8}>
+            <Grid container spacing={3} 
+            justifyContent={"center"}
+            alignItems={"center"}>
+              <Grid item xs={12}>
+                <Typography variant="h3" textAlign={"center"}>  Assitant Electrician</Typography>
+              
+              </Grid>
+              
+            <Grid item xs={12} md={6} lg={4} order={order}>
+              <Box sx={{display:"flex",justifyContent:"center"}}>
+              <List
+                sx={{
+                  width: "100%",
+                  maxWidth: 360,
+                  bgcolor: "background.paper",
+                }}
+              >
+                <ListItemText
+                sx={{ my: 0,textAlign:"center" }}
+                primary="Course Details"
+                primaryTypographyProps={{
+                  fontSize: 20,
+                  fontWeight: 'medium',
+                  letterSpacing: 0,
+                }}
+              />
+                <ListItem>
+                  <ListItemAvatar>
+                      <WorkIcon />
+                  </ListItemAvatar>
+                  <ListItemText primary="Job Role" secondary="Assistant Electrician" />
+                </ListItem>
+                <ListItem>
+                  <ListItemAvatar>
+                      <TimerIcon />
+                  </ListItemAvatar>
+                  <ListItemText primary="Duration" secondary="90  Days" />
+                </ListItem>
+                <ListItem>
+                  <ListItemAvatar>
+                      <BeachAccessIcon />
+                  </ListItemAvatar>
+                  <ListItemText primary="Study Level" secondary="12TH" />
+                </ListItem>
+                <ListItem>
+                  <ListItemAvatar>
+                      <StarHalfIcon />
+                  </ListItemAvatar>
+                  <ListItemText primary="Experience" secondary="0 to 1 Years" />
+                </ListItem>
+                <ListItem>
+                  <ListItemAvatar>
+                      <CakeIcon />
+                  </ListItemAvatar>
+                  <ListItemText primary="Minimum Job Entry Age" secondary="18 Years" />
+                </ListItem>
+                <ListItem>
+                  <ListItemAvatar>
+                      <TrendingUpIcon />
+                  </ListItemAvatar>
+                  <ListItemText primary="NSQF Level" secondary="4" />
+                </ListItem>
+              </List></Box>
+            </Grid>
+              <Grid item xs={12} md={6} order={1}>
+                
+            <Stack direction={isMobile1 ? 'column' : 'row'} spacing={0}>
+              {course.map((row) => (
+                <ListItem>
+                  <ListItemText primary={row.name} secondary={row.details} />
+                </ListItem>
+))}
+
+              </Stack>
                 <Box
                   sx={{
                     background:
                       "linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%)",
                   }}
                 >
-                  <Image
-                    src={"/courses/electri.svg"}
-                    alt="Image"
-                    width={"600"}
-                    height={"600"}
-                  />
-                  <Typography variant="h6">
-                    <List>
-                      <ListItem>• Sector: Construction</ListItem>
-                      <ListItem>
-                        • Sub Sector: Real Estate and Infrastructure
-                        Construction
-                      </ListItem>
-                      <ListItem>
-                        • Industry: Construction Electrical Works
-                      </ListItem>
-                      <ListItem>• Reference ID: CON/Q0602</ListItem>
-                      <ListItem> • Revised: NCO-2004/7137.2</ListItem>
-                    </List>
-                  </Typography>
                   <Typography variant="body1" lineHeight={2}>
                     The assistant electrician is responsible for the
                     installation and maintenance of electrical systems in
@@ -165,88 +185,11 @@ const Electrician = () => {
                   </Typography>
                 </Box>
               </Grid>
-              <Grid item xs={12} sm={12} md={5} lg={4}>
-                <Stack direction={"column"} spacing={2}>
-                <Paper>
-                  <TableContainer>
-                    <Table
-                      sx={{
-                        minWidth: 250,
-                        background:
-                          "linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%)",
-                      }}
-                      aria-label="caption table"
-                    >
-                      <TableHead>
-                        <TableRow>
-                          <TableCell align="center" colSpan={2}>
-                            Assistant Electrician
-                          </TableCell>
-                        </TableRow>
-                        <TableRow>
-                          <TableCell>Job Role</TableCell>
-                          <TableCell align="right">
-                            Assistant Electrician
-                          </TableCell>
-                        </TableRow>
-                      </TableHead>
-                      <TableBody>
-                        {rows.map((row) => (
-                          <TableRow key={row.name}>
-                            <TableCell component="th" scope="row">
-                              {row.name}
-                            </TableCell>
-                            <TableCell align="right">{row.details}</TableCell>
-                          </TableRow>
-                        ))}
-                        <TableRow>
-                          <TableCell align="center" colSpan={2}>
-                            <Link href={'/contactform/contact'}>
-                            <Button>Apply now</Button></Link>
-                          </TableCell>
-                        </TableRow>
-                      </TableBody>
-                    </Table>
-                  </TableContainer>
-                </Paper>
-                
-                <Paper>
-                <TableContainer>
-                  <Table
-                    sx={{
-                      minWidth: 250,
-                      background: "linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%)",
-                    }}
-                    aria-label="caption table"
-                  >
-                    <TableHead>
-                      <TableRow>
-                        <TableCell align="center" colSpan={2}>
-                          General Duty Assistant
-                        </TableCell>
-                      </TableRow>
-                     
-                    </TableHead>
-                    <TableBody>
-                      {course.map((row) => (
-                        <TableRow key={row.name}>
-                          <TableCell component="th" scope="row">
-                            {row.name}
-                          </TableCell>
-                          <TableCell align="right">{row.details}</TableCell>
-                        </TableRow>
-                      ))}
-                      <TableRow>
-                       
-                      </TableRow>
-                    </TableBody>
-                  </Table>
-                </TableContainer></Paper></Stack>
-              </Grid>
             </Grid>
           </Container>
         </Box>
-      </Box>
+      
+      </div>
     </>
   );
 };

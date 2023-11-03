@@ -12,7 +12,8 @@ const About = () => {
   const imageHeight = isMobile ? 300 : 600;
   
   return (
-    <div>
+    <div> {/* Add top padding to prevent content from overlaying the header */}
+
       <Box
         width="100%"
         display="flex"
@@ -49,11 +50,11 @@ const About = () => {
       </Box>
 
       <Container>
-        <Grid container spacing={2} sx={{ marginTop: 1 }}>
+        <Grid container spacing={2} sx={{justifyContent:"center",alignItems:"center" }}>
           {/* src={"/bg/aboutusgirl.svg"} */}
           <Grid item xs={12} sm={6} md={12} lg={12}>
             
-          <Typography variant="h4">Introduction</Typography>
+          <Typography variant="h4" sx={{ lineHeight: 2,textAlign:"center" }}>Introduction</Typography>
               <Typography variant="body1" sx={{ lineHeight: 2 }}>
                 Indira Education and Foundation Skill Development Program
                 provides youth with leadership, social, communication, computers
@@ -103,7 +104,7 @@ const About = () => {
           </Grid>
           <Grid item xs={12} sm={12} md={12} lg={12}>
             <Box>
-              <Typography variant="h4" sx={{ lineHeight: 2 }}>
+              <Typography variant="h4" sx={{ lineHeight: 2,textAlign:"center" }}>
                 Purpose of Skill Development Programmes
               </Typography>
               <Typography variant="body1" sx={{ lineHeight: 2 }}>
@@ -129,7 +130,7 @@ const About = () => {
                 because they are not primarily based on content knowledge.
               </Typography>
             </Box>
-            <Typography variant="h3" sx={{ lineHeight: 2 }}>
+            <Typography variant="h3" sx={{ lineHeight: 2 ,textAlign:"center"}}>
               Mission Statement:
             </Typography>
             <Typography variant="body1" sx={{ lineHeight: 2 }}>
@@ -157,7 +158,7 @@ const About = () => {
               committed to nurturing personal growth and character development,
               preparing students for life's challenges.
             </Typography>
-            <Typography variant="h3" sx={{ lineHeight: 2 }}>
+            <Typography variant="h3" sx={{ lineHeight: 2 ,textAlign:"center"}}>
               Vision Statement:
             </Typography>
             <Typography variant="body1" sx={{ lineHeight: 2 }}>

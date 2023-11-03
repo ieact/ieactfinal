@@ -65,11 +65,13 @@ const Footer = () => {
   };
 
   return (
+    <div>
     <div
       style={{
         opacity: isInView ? 1 : 0,
         transform: `translateY(${isInView ? 0 : "1rem"})`,
         transition: "transform 3s, opacity 3s",
+        marginTop:'4rem',
       }}
       ref={containerRef}
     >
@@ -146,7 +148,7 @@ const Footer = () => {
           >
             <Stack
               direction="row"
-              spacing={3}
+              spacing={2}
               sx={{ display: "flex", justifyContent: "center" }}
             >
               <Box
@@ -202,8 +204,8 @@ const Footer = () => {
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
-                height: "100px", // Adjust the height as needed
-                m: 1,
+                height: "50px", // Adjust the height as needed
+                
               }}
             >
               <Typography sx={{ textAlign: "center" }}>
@@ -214,7 +216,7 @@ const Footer = () => {
           </Grid>
         </Grid>
       </Box>
-    </div>
+    </div></div>
   );
 };
 

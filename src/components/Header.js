@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useRouter } from "next/router";
 import { styled, useTheme } from "@mui/material/styles";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -25,6 +26,18 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [subMenuOpen, setSubMenuOpen] = useState(false);
 
+
+  const router = useRouter(); // Get the router object
+
+  const isIndexPage = router.pathname === "/"; // Check if the current page is the index page
+
+  const { y } = useWindowScroll(); // Use the useWindowScroll hook to get the scroll position
+  const isScrolled = y > 0;
+
+  const headerStyle = {
+    backgroundColor: isIndexPage ? (isScrolled ? "black" : "transparent") : "black",
+    transition: "background-color 0.3s",
+  };
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
@@ -48,13 +61,6 @@ export default function Header() {
 
   const handleSubMenuClose = () => {
     setSubMenuOpen(false);
-  };
-
-  const { y } = useWindowScroll(); // Use the useWindowScroll hook to get the scroll position
-  const isScrolled = y > 0; // Check if the user has scrolled
-  const headerStyle = {
-    backgroundColor: isScrolled ? "black" : "transparent",
-    transition: "background-color 0.3s",
   };
 
   return (
