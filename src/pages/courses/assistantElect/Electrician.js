@@ -9,7 +9,7 @@ import {
   Paper,
   Typography,
 } from "@mui/material";
-import { useMediaQuery,useTheme } from "@mui/material";
+import { useMediaQuery, useTheme } from "@mui/material";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -24,24 +24,22 @@ import { Stack } from "@mui/system";
 
 import ListItemText from "@mui/material/ListItemText";
 import ListItemAvatar from "@mui/material/ListItemAvatar";
-import StarHalfIcon from '@mui/icons-material/StarHalf';
+import StarHalfIcon from "@mui/icons-material/StarHalf";
 import BeachAccessIcon from "@mui/icons-material/BeachAccess";
-import WorkIcon from '@mui/icons-material/Work';
-import TrendingUpIcon from '@mui/icons-material/TrendingUp';
-import CakeIcon from '@mui/icons-material/Cake';
-import TimerIcon from '@mui/icons-material/Timer';
-
+import WorkIcon from "@mui/icons-material/Work";
+import TrendingUpIcon from "@mui/icons-material/TrendingUp";
+import CakeIcon from "@mui/icons-material/Cake";
+import TimerIcon from "@mui/icons-material/Timer";
 
 function createData(name, details) {
   return { name, details };
 }
 const course = [
   createData("Sector", "Healthcare"),
-  createData("Sub Sector", "General Duty Assistant",),
-  createData("Occupation", "Nursing Care Assistant",),
+  createData("Sub Sector", "General Duty Assistant"),
+  createData("Occupation", "Nursing Care Assistant"),
   createData("Reference ID", "CON/Q0602"),
   createData("Revised", "NCO-2004/7137.2"),
- 
 ];
 const rows = [
   createData("Duration", "90 Days"),
@@ -52,104 +50,119 @@ const rows = [
   createData("Role Description", ""),
 ];
 
-
 const Electrician = () => {
-  
   const theme = useTheme();
 
   const isMobile = useMediaQuery("(max-width:600px)");
   const imageWidth = isMobile ? 300 : 600;
   const imageHeight = isMobile ? 300 : 600;
-  const isMobile1 = useMediaQuery(theme.breakpoints.down('sm'));
+  const isMobile1 = useMediaQuery(theme.breakpoints.down("sm"));
   const order = isMobile1 ? 2 : 1;
   return (
-    <><div>  
+    <>
+      <div>
         <Box
           sx={{
-            background: "linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%)",pt:5
+            background: "linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%)",
+            pt: 6,
           }}
         >
           <Container maxWidth="xl">
-            <Grid container spacing={3} 
-            justifyContent={"center"}
-            alignItems={"center"}>
+            <Grid
+              container
+              spacing={2}
+              justifyContent={"center"}
+              alignItems={"center"}
+            >
               <Grid item xs={12}>
-                <Typography variant="h3" textAlign={"center"}>  Assitant Electrician</Typography>
-              
+                <Typography variant="h3" textAlign={"center"}>
+                  {" "}
+                  Assitant Electrician
+                </Typography>
               </Grid>
-              
-            <Grid item xs={12} md={6} lg={4} order={order}>
-              <Box sx={{display:"flex",justifyContent:"center"}}>
-              <List
-                sx={{
-                  width: "100%",
-                  maxWidth: 360,
-                  bgcolor: "background.paper",
-                }}
-              >
-                <ListItemText
-                sx={{ my: 0,textAlign:"center" }}
-                primary="Course Details"
-                primaryTypographyProps={{
-                  fontSize: 20,
-                  fontWeight: 'medium',
-                  letterSpacing: 0,
-                }}
-              />
-                <ListItem>
-                  <ListItemAvatar>
-                      <WorkIcon />
-                  </ListItemAvatar>
-                  <ListItemText primary="Job Role" secondary="Assistant Electrician" />
-                </ListItem>
-                <ListItem>
-                  <ListItemAvatar>
-                      <TimerIcon />
-                  </ListItemAvatar>
-                  <ListItemText primary="Duration" secondary="90  Days" />
-                </ListItem>
-                <ListItem>
-                  <ListItemAvatar>
-                      <BeachAccessIcon />
-                  </ListItemAvatar>
-                  <ListItemText primary="Study Level" secondary="12TH" />
-                </ListItem>
-                <ListItem>
-                  <ListItemAvatar>
-                      <StarHalfIcon />
-                  </ListItemAvatar>
-                  <ListItemText primary="Experience" secondary="0 to 1 Years" />
-                </ListItem>
-                <ListItem>
-                  <ListItemAvatar>
-                      <CakeIcon />
-                  </ListItemAvatar>
-                  <ListItemText primary="Minimum Job Entry Age" secondary="18 Years" />
-                </ListItem>
-                <ListItem>
-                  <ListItemAvatar>
-                      <TrendingUpIcon />
-                  </ListItemAvatar>
-                  <ListItemText primary="NSQF Level" secondary="4" />
-                </ListItem>
-              </List></Box>
-            </Grid>
-              <Grid item xs={12} md={6} order={1}>
-                
-            <Stack direction={isMobile1 ? 'column' : 'row'} spacing={0}>
-              {course.map((row) => (
-                <ListItem>
-                  <ListItemText primary={row.name} secondary={row.details} />
-                </ListItem>
-))}
 
-              </Stack>
-                <Box
-                  sx={{
-                    background:
-                      "linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%)",
-                  }}
-                >
+              <Grid item xs={12} md={6} lg={4} order={order}>
+                <Box sx={{ display: "flex", justifyContent: "center" }}>
+                  <Paper
+                    elevation={10}
+                    sx={{ p: 2, bgcolor: "background.paper" }}
+                  >
+                    <List
+                      sx={{
+                        width: "100%",
+                        maxWidth: 360,
+                      }}
+                    >
+                      <ListItemText
+                        sx={{ my: 0, textAlign: "center" }}
+                        primary="Course Details"
+                        primaryTypographyProps={{
+                          fontSize: 20,
+                          fontWeight: "medium",
+                          letterSpacing: 0,
+                        }}
+                      />
+                      <ListItem>
+                        <ListItemAvatar>
+                          <WorkIcon />
+                        </ListItemAvatar>
+                        <ListItemText
+                          primary="Job Role"
+                          secondary="Assistant Electrician"
+                        />
+                      </ListItem>
+                      <ListItem>
+                        <ListItemAvatar>
+                          <TimerIcon />
+                        </ListItemAvatar>
+                        <ListItemText primary="Duration" secondary="90  Days" />
+                      </ListItem>
+                      <ListItem>
+                        <ListItemAvatar>
+                          <BeachAccessIcon />
+                        </ListItemAvatar>
+                        <ListItemText primary="Study Level" secondary="12TH" />
+                      </ListItem>
+                      <ListItem>
+                        <ListItemAvatar>
+                          <StarHalfIcon />
+                        </ListItemAvatar>
+                        <ListItemText
+                          primary="Experience"
+                          secondary="0 to 1 Years"
+                        />
+                      </ListItem>
+                      <ListItem>
+                        <ListItemAvatar>
+                          <CakeIcon />
+                        </ListItemAvatar>
+                        <ListItemText
+                          primary="Minimum Job Entry Age"
+                          secondary="18 Years"
+                        />
+                      </ListItem>
+                      <ListItem>
+                        <ListItemAvatar>
+                          <TrendingUpIcon />
+                        </ListItemAvatar>
+                        <ListItemText primary="NSQF Level" secondary="4" />
+                      </ListItem>
+                    </List>
+                  </Paper>
+                </Box>
+              </Grid>
+              <Grid item xs={12} md={6} order={1}>
+                <Stack direction={isMobile1 ? "column" : "row"} spacing={0}>
+                  {course.map((row) => (
+                    <ListItem>
+                      <ListItemText
+                        primary={row.name}
+                        secondary={row.details}
+                      />
+                    </ListItem>
+                  ))}
+                </Stack>
+                <Box>
                   <Typography variant="body1" lineHeight={2}>
                     The assistant electrician is responsible for the
                     installation and maintenance of electrical systems in
@@ -188,7 +201,6 @@ const Electrician = () => {
             </Grid>
           </Container>
         </Box>
-      
       </div>
     </>
   );

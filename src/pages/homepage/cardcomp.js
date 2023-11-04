@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
     boxShadow: "5px 5px 5px rgba(0, 0, 0, 0.1)",
     background: "white", // Change background to the linear gradient
     color: "#333",
-    padding: "40px",
+    padding: "30px",
     borderRadius: "10px",
     marginBottom: "20px",
     top: "6rem", // Adjust as needed
@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: "0.5rem",
   },
   wrapper: {
-    padding: "150px 0 0", // Adjust the top padding to create space between the header and the cards
+    padding: "60px 0 0", // Adjust the top padding to create space between the header and the cards
     maxWidth: "1000px",
     margin: "0 auto",
     fontFamily: `-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
@@ -89,42 +89,50 @@ const YourComponent = () => {
   const classes = useStyles();
 
   return (
-    <Box>
-    <div className={classes.wrapper}>
-      {choose.map((item) => (
-        <Card key={item.id} className={classes.card}>
-          <Grid container>
-            <Grid item xs={12} lg={6}>
-              <CardContent
-                sx={{
-                  display: "column",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-              >
-                <Typography variant="h5" component="div">
-                  {item.title}
-                </Typography>
-                <Typography variant="subtitle1" color="secondary">
-                  {item.description}
-                </Typography>
-              </CardContent>
-            </Grid>
-            <Grid item xs={12} lg={6}>
-              <Box className={classes.imageBox}>
+    <Box
+      sx={{ background: " linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%)",}}
+    >
+      <Grid item xs={12} sx={{ pt: 2 }}>
+        <Typography variant="h3" align="center">
+          Why Choose Us
+        </Typography>
+      </Grid>
+      <div className={classes.wrapper}>
+        {choose.map((item) => (
+          <Card key={item.id} className={classes.card}>
+            <Grid container>
+              <Grid item xs={12} lg={6}>
+                <CardContent
+                  sx={{
+                    display: "column",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  <Typography variant="h5" component="div">
+                    {item.title}
+                  </Typography>
+                  <Typography variant="subtitle1" color="secondary">
+                    {item.description}
+                  </Typography>
+                </CardContent>
+              </Grid>
+              <Grid item xs={12} lg={6}>
+                <Box className={classes.imageBox}>
                   <Image
                     src={item.imageUrl}
-                    alt=""
+                    alt={item.alt}
                     width={300}
                     height={200}
                     className={classes.imageWrapper}
                   />
-              </Box>
+                </Box>
+              </Grid>
             </Grid>
-          </Grid>
-        </Card>
-      ))}
-    </div></Box>
+          </Card>
+        ))}
+      </div>
+    </Box>
   );
 };
 

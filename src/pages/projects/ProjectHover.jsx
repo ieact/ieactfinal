@@ -51,7 +51,7 @@ function ProjectHover() {
       onMouseEnter={handleOpen}
       onMouseLeave={handleClose}
     >
-      <Button  sx={{fontSize:"1.2rem", color:'warm.main','&:hover': {color:'secondary.dark'} }}>Projects</Button>
+      <Button  sx={{fontSize:"1.2rem", color:'warm.main','&:hover': {color:'warning.light'} }}>Projects</Button>
       <Menu
         anchorEl={anchorEl}
         open={Boolean(anchorEl)}

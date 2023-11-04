@@ -11,7 +11,7 @@ const HeroSection = () => {
       sx={{
         position: "relative",
         background: `url("/hero.jpg") center / cover`,
-        minHeight: { xs: 500, sm: 500, md: 800, lg: 789 },
+        // minHeight: { xs: 500, sm: 500, md: 600, lg: 789 },
       }}
     >
       <Box
@@ -32,7 +32,7 @@ const HeroSection = () => {
           position="absolute"
           
           sx={{
-            fontSize: { xs: 32, md: 86 },
+            fontSize: { xs: 42, md: 86 },
             color: "primary.main",
           }}
         >

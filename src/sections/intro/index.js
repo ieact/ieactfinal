@@ -63,7 +63,7 @@ const Intro = () => {
       <Container maxWidth={"xl"}>
         <Grid container spacing={2} display="flex" flexWrap="wrap" justifyContent={"center"}>
           <Grid item xs={12}>
-            <Typography variant="h4" textAlign={"center"} sx={{color:"secondary.main"}} lineHeight={1.5}>
+            <Typography variant="h4" textAlign={"center"} sx={{color:"black"}} lineHeight={1.5}>
             Free Skill Development Programs
 
             </Typography>
@@ -83,7 +83,7 @@ const Intro = () => {
                   alt="Paella dish"
                 />
                 <CardContent>
-                  <Typography variant="body1" sx={{textAlign:"center"}}>
+                  <Typography variant="h6" sx={{textAlign:"center"}}>
                     {item.description}
                   </Typography>
                 </CardContent>

@@ -79,7 +79,7 @@ const Footer = () => {
         sx={{ background: "linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%)" }}
       >
         <Grid container spacing={4} sx={{ p: 2 }}>
-          <Grid item xs={12} sm={6} md={4} lg={4}>
+          <Grid item xs={12} sm={8} md={4} lg={4}>
             <Typography variant="h5" sx={{ marginBottom: 2 }}>
               Indra Educational And Charitable Trust
             </Typography>
@@ -89,7 +89,7 @@ const Footer = () => {
               social, communication, computers, and basic life skills.
             </Typography>
           </Grid>
-          <Grid item xs={12} sm={6} md={4} lg={2}>
+          <Grid item xs={12} sm={4} md={2} lg={2}>
             <Typography variant="h5" sx={{ marginBottom: 2 }}>
               Quik Links
             </Typography>
@@ -112,7 +112,7 @@ const Footer = () => {
               </Link>
             </Stack>
           </Grid>
-          <Grid item xs={12} sm={6} md={4} lg={5}>
+          <Grid item xs={12} sm={12} md={6} lg={6}>
             <Typography variant="h5" sx={{ marginBottom: 2 }}>
               Contact Us
             </Typography>
@@ -156,44 +156,44 @@ const Footer = () => {
                   height: "2.5rem",
                   width: "2.5rem",
                   borderRadius: "25%",
-                  background: "#d9a60b",
+                  background: "primary.main",
                   padding: "10px",
                 }}
               >
-                <TwitterIcon sx={{ color: "white" }} />
+                <TwitterIcon sx={{ color: "#757575" }} />
               </Box>
               <Box
                 sx={{
                   height: "2.5rem",
                   width: "2.5rem",
                   borderRadius: "25%",
-                  background: "#d9a60b",
+                  // background: "white",
                   padding: "10px",
                 }}
               >
-                <FacebookIcon sx={{ color: "blue" }} />
+                <FacebookIcon sx={{ color: "#757575" }} />
               </Box>
               <Box
                 sx={{
                   height: "2.5rem",
                   width: "2.5rem",
                   borderRadius: "25%",
-                  background: "#d9a60b",
+                  // background: "white",
                   padding: "10px",
                 }}
               >
-                <InstagramIcon sx={{ color: "red" }} />
+                <InstagramIcon sx={{ color: "#757575" }} />
               </Box>
               <Box
                 sx={{
                   height: "2.5rem",
                   width: "2.5rem",
                   borderRadius: "25%",
-                  background: "#d9a60b",
+                  // background: "white",
                   padding: "10px",
                 }}
               >
-                <YouTubeIcon sx={{ color: "red" }} />
+                <YouTubeIcon sx={{ color: "#757575" }} />
               </Box>
             </Stack>
           </Grid>

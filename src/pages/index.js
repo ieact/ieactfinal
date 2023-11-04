@@ -35,10 +35,11 @@ export default function Home() {
 
           <HeroSection />
           <Landing1/>
-          <SscLanding />
+          
         
           <LandingSection/>
           <YourComponent />
+          <SscLanding />
           <Course/>
           {/* <CenteredText /> */}
           

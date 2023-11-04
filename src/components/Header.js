@@ -19,13 +19,14 @@ import ChevronRightIcon from "@mui/icons-material/ChevronRight"; // Import Drawe
 import { Divider, Stack } from "@mui/material";
 import ProjectHover from "@/pages/projects/ProjectHover";
 import CoursesHover from "@/pages/courses/CoursesHover";
+import { useMediaQuery } from "@mui/material";
+
 
 import { useWindowScroll } from "react-use";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [subMenuOpen, setSubMenuOpen] = useState(false);
-
 
   const router = useRouter(); // Get the router object
 
@@ -35,7 +36,11 @@ export default function Header() {
   const isScrolled = y > 0;
 
   const headerStyle = {
-    backgroundColor: isIndexPage ? (isScrolled ? "black" : "transparent") : "black",
+    backgroundColor: isIndexPage
+      ? isScrolled
+        ? "black"
+        : "transparent"
+      : "black",
     transition: "background-color 0.3s",
   };
   const toggleMenu = () => {
@@ -63,6 +68,15 @@ export default function Header() {
     setSubMenuOpen(false);
   };
 
+  const theme = useTheme();
+
+  const isMobile = useMediaQuery("(max-width:1100px)");
+  const imageWidth = isMobile ? 900 : 1000;
+  const imageHeight = isMobile ? 1000 : 1100;
+  const isMobile1 = useMediaQuery(theme.breakpoints.down('sm'));
+  const order = isMobile1 ? 2 : 1;
+
+
   return (
     <>
       <AppBar component="nav" position="fixed" sx={headerStyle}>
@@ -72,7 +86,7 @@ export default function Header() {
           justifyContent="space-between"
           alignItems="center"
         >
-          <Grid item sm={3} lg={5} xl={4}>
+          <Grid item xs={7} sm={7} lg={3.5} xl={4}>
             <Stack direction={"row"} spacing={2}>
               <Link href="/" component="div">
                 <Image
@@ -103,7 +117,7 @@ export default function Header() {
                   </Typography>
                 </Box>
               </Hidden>
-              <Hidden lgDown>
+              <Hidden mdDown>
                 <Box
                   height={70}
                   sx={{
@@ -119,23 +133,20 @@ export default function Header() {
               </Hidden>
             </Stack>
           </Grid>
-          {/* <Hidden mdUp>
-          <Grid item>
-             <Typography variant="h3" sx={{p:1}}> </Typography>
-             </Grid>
-</Hidden> */}
-          <Grid item>
-            <Toolbar>
-              <Hidden lgUp>
-                {/* Show menu icon and open side menu on small screens */}
-                <Typography variant="h3" sx={{ p: 1 }}>
-                  {" "}
-                </Typography>
+
+
+
+          {/* small screen menubar */}
+          <Hidden lgUp>
+            <Grid item xs={4} sm={3}>
+              <Toolbar>
+                
                 <IconButton
                   edge="start"
                   color="inherit"
                   aria-label="menu"
                   onClick={toggleMenu}
+                  sx={{ justifyContent: "flex-end" }}
                 >
                   <MenuIcon sx={{ color: "white" }} />
                 </IconButton>
@@ -144,7 +155,6 @@ export default function Header() {
                   <DrawerHeader>
                     <Typography variant="h6">IEACT</Typography>
                     <IconButton onClick={handleDrawerClose}>
-                  
                       {" "}
                       <ChevronLeftIcon />
                       {/* // {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon/>} */}
@@ -183,7 +193,7 @@ export default function Header() {
                                 TNSTC
                               </Button>
                             </Link>
-                            <Link href="/projects/moma/MoMA">
+                            <Link href="/projects/daynu/Day">
                               <Button onClick={handleDrawerClose}>
                                 Day-NULM
                               </Button>
@@ -221,12 +231,12 @@ export default function Header() {
                               </Button>
                             </Link>
                             <Link href="/courses/generalDuty/Generalduty">
-                              <Button onClick={handleSubMenuClose}>
+                              <Button onClick={handleDrawerClose}>
                                 Generalduty Assitant
                               </Button>
                             </Link>
                             <Link href="/courses/handset/HandsetRepair">
-                              <Button onClick={handleSubMenuClose}>
+                              <Button onClick={handleDrawerClose}>
                                 Handset Repair
                               </Button>
                             </Link>{" "}
@@ -235,7 +245,9 @@ export default function Header() {
                       )}{" "}
                       <Divider />
                       <Link href="/aboutus">
-                        <Button onClick={handleDrawerClose}>Affiliation-PIA</Button>{" "}
+                        <Button onClick={handleDrawerClose}>
+                          Affiliation-PIA
+                        </Button>{" "}
                       </Link>{" "}
                       <Divider />
                       <Link href="/contactform/contact">
@@ -245,16 +257,31 @@ export default function Header() {
                     </Stack>
                   </div>
                 </Drawer>
-              </Hidden>
+              </Toolbar>
+            </Grid>
+          </Hidden>
 
-              <Hidden smDown mdDown>
-                <Stack direction={"row"} spacing={2}>
+
+
+
+
+{/* large screen toolbar */}
+          <Hidden  mdDown width={isMobile} >
+            <Grid>
+              <Toolbar>
+                <Stack
+                  direction={"row"}
+                  spacing={2}
+                  justifyContent={"flex-end"}
+                  alignItems={"center"}
+                  sx={{pt:4}}
+                >
                   <Link href="/">
                     <Button
                       sx={{
                         fontSize: "1.2rem",
                         color: "warm.main",
-                        "&:hover": { color: "secondary.dark" },
+                        "&:hover": { color: "warning.light" },
                       }}
                     >
                       Home
@@ -266,7 +293,7 @@ export default function Header() {
                       sx={{
                         fontSize: "1.2rem",
                         color: "warm.main",
-                        "&:hover": { color: "secondary.dark" },
+                        "&:hover": { color: "warning.light" },
                       }}
                     >
                       About-Us
@@ -278,7 +305,7 @@ export default function Header() {
                     sx={{
                       fontSize: "1.2rem",
                       color: "warm.main",
-                      "&:hover": { color: "secondary.dark" },
+                      "&:hover": { color: "warning.light" },
                     }}
                   >
                     Affiliation-PIA
@@ -289,16 +316,16 @@ export default function Header() {
                       sx={{
                         fontSize: "1.2rem",
                         color: "warm.main",
-                        "&:hover": { color: "secondary.dark" },
+                        "&:hover": { color: "warning.light" },
                       }}
                     >
                       Contact-Us
                     </Button>
                   </Link>
                 </Stack>
-              </Hidden>
-            </Toolbar>
-          </Grid>
+              </Toolbar>
+            </Grid>
+          </Hidden>
         </Grid>
       </AppBar>
     </>

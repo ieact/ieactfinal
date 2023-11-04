@@ -106,96 +106,114 @@ const SscLanding = () => {
 
   return (
     <div>
-    <Box >
-      <div
-        className={`${classes.scrollEffectText} ${
-          isTextHidden ? classes.hiddenText : ""
-        }`}
-      >
-        <Typography
-          variant="h3"
-          sx={{ textAlign: "center",justifyContent:"center",pt:"1.5rem" ,color:"black"}}
+      <Box sx={{ pb: 3,
+      }}  >
+        <div
+          className={`${classes.scrollEffectText} ${
+            isTextHidden ? classes.hiddenText : ""
+          }`}
         >
-          Skill Sector Council
-        </Typography>
-      </div>
-      <Container maxWidth="xl">
-        <Box display="flex" flexWrap="wrap" justifyContent={"center"}>
-          {sscImg.map((item) => (
-            <Card
-              component={Link}
-              href={item.link}
-              target="_blank"
-              rel="noreferrer"
-              key={item.id}
-              sx={{
-                textDecoration: "none",
-                width: 270,
-                m: "2rem",
-                mt: "3rem",
-                backgroundColor:
-                  hoveredItem === item.id ? "primary.light" : "#ffff",
-                borderRadius: "1rem",
-                padding: "1.5rem",
-                boxShadow: "3px 3px 12px 2px rgba(0, 0, 0, 0.6)",
-                transition: "0.2s",
-                margin: "0 2rem",
-                transform:
-                  hoveredItem === item.id ? "translateY(-2rem)" : "none",
-              }}
-              onMouseEnter={() => setHoveredItem(item.id)}
-              onMouseLeave={() => setHoveredItem(null)}
-            >
-              <CardActionArea
+          <Typography
+            variant="h3"
+            sx={{
+              textAlign: "center",
+              justifyContent: "center",
+              pt: "1.5rem",
+              color: "black",
+            }}
+          >
+            Skill Sector Council
+          </Typography>
+        </div>
+        <Container maxWidth="xl">
+          
+        <Typography variant="h6" sx={{justifyContent:"center"}}>
+            Skill Sector Councils are organizations that play a pivotal role in
+            bridging the gap between industry needs and workforce skills. They
+            focus on identifying industry-specific skill requirements,
+            developing standardized training programs, and ensuring the
+            workforce is equipped with the right skills to excel in various
+            sectors. These councils promote skill development, enhance
+            employability, and foster economic growth by aligning education and
+            training with the evolving demands of industries.
+          </Typography>
+          <Box display="flex" flexWrap="wrap" justifyContent={"center"}>
+            {sscImg.map((item) => (
+              <Card
                 component={Link}
                 href={item.link}
                 target="_blank"
                 rel="noreferrer"
+                key={item.id}
+                sx={{
+                  textDecoration: "none",
+                  width: 280,
+                  m: "2rem",
+                  mt: "3rem",
+                  backgroundColor:
+                    hoveredItem === item.id ? "primary.light" : "#ffff",
+                  borderRadius: "1rem",
+                  padding: "1.5rem",
+                  boxShadow: "3px 3px 12px 2px rgba(0, 0, 0, 0.6)",
+                  transition: "0.2s",
+                  margin: "0 2rem",
+                  transform:
+                    hoveredItem === item.id ? "translateY(-2rem)" : "none",
+                }}
+                onMouseEnter={() => setHoveredItem(item.id)}
+                onMouseLeave={() => setHoveredItem(null)}
               >
-                {hoveredItem === item.id ? (
-                  <CardContent>
-                    <Typography variant="subtitle1">
-                      {item.description}
-                    </Typography>
-                    <Typography
-                      variant="body2"
-                      color="textSecondary"
-                      sx={{ display: "none" }}
-                    >
-                      Learn more
-                    </Typography>
-                    <Typography variant="subtitle1" sx={{ color: "white" }}>
-                      {item.onHoverdes}
-                    </Typography>
-                  </CardContent>
-                ) : (
-                  <>
-                    {/* <CardMedia component="img" height="70"  image={item.imageUrl} alt={item.alt} */}
-
-                    <Box sx={{ justifyContent: "center", display: "flex" }}>
-                      <img
-                        src={item.imageUrl}
-                        alt={`Image ${item.alt}`}
-                        style={{ height: 70 }}
-                      ></img>
-                    </Box>
-                    {/* </CardMedia> */}
+                <CardActionArea
+                  component={Link}
+                  href={item.link}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {hoveredItem === item.id ? (
                     <CardContent>
                       <Typography variant="subtitle1">
                         {item.description}
                       </Typography>
-                      {/* <Typography variant="body2" color="textSecondary">
+                      <Typography
+                        variant="body2"
+                        color="textSecondary"
+                        sx={{ display: "none" }}
+                      >
+                        Learn more
+                      </Typography>
+                      <Typography variant="subtitle1" sx={{ color: "white" }}>
+                        {item.onHoverdes}
+                      </Typography>
+                    </CardContent>
+                  ) : (
+                    <>
+                      {/* <CardMedia component="img" height="70"  image={item.imageUrl} alt={item.alt} */}
+
+                      <Box sx={{ justifyContent: "center", display: "flex" }}>
+                        <img
+                          src={item.imageUrl}
+                          alt={`Image ${item.alt}`}
+                          style={{ height: 70 }}
+                        ></img>
+                      </Box>
+                      {/* </CardMedia> */}
+                      <CardContent>
+                        <Typography variant="subtitle1">
+                          {item.description}
+                        </Typography>
+                        {/* <Typography variant="body2" color="textSecondary">
                       Learn more
                     </Typography> */}
-                    </CardContent>
-                  </>
-                )}
-              </CardActionArea>
-            </Card>
-          ))}
-        </Box>
-      </Container>
-    </Box></div>
+                      </CardContent>
+                    </>
+                  )}
+                </CardActionArea>
+              </Card>
+            ))}
+          </Box>
+        </Container>
+      </Box>
+    </div>
   );
 };
 

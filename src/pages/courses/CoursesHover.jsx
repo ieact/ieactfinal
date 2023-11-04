@@ -18,7 +18,7 @@ function CoursesHover() {
 
   return (
     <div onMouseEnter={handleOpen} onMouseLeave={handleClose}>
-      <Button  sx={{fontSize:"1.2rem", color:'warm.main','&:hover': {color:'secondary.dark'} }}>Courses</Button>
+      <Button  sx={{fontSize:"1.2rem", color:'warm.main','&:hover': {color:'warning.light'} }}>Courses</Button>
       <Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={handleClose}>
         <Link href="/courses/ithelp/Ithelp">
           <MenuItem onClick={handleClose}>IT Help Assistant</MenuItem>

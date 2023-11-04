@@ -11,7 +11,7 @@ let theme = createTheme({
     //   // background-image: linear-gradient( 0.3deg,  rgba(6,17,33,1) 1.1%, rgba(42,98,226,1) 97.3% );
     // },
     background: {
-      default: grey[400]
+      default: " linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%)"
       // default:
         // "linear-gradient( 0.3deg,  rgba(6,17,33,1) 1.1%, rgba(42,98,226,1) 97.3% )",
     },
