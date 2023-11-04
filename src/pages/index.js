@@ -12,7 +12,7 @@ import LandingSection from "./homepage/landing";
 import Course from "./homepage/course";
 import CenteredText from "../components/Foot";
 import Landing1 from "./homepage/Landing1";
-import useScrollSnap from "react-use-scroll-snap";
+// import useScrollSnap from "react-use-scroll-snap";
 import { Box } from "@mui/system";
 
 
@@ -20,8 +20,8 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
 
-  const scrollRef = useRef(null);
-  useScrollSnap({ ref: scrollRef, duration: 50, delay: 20 });
+  // const scrollRef = useRef(null);
+  // useScrollSnap({ ref: scrollRef, duration: 50, delay: 20 });
   return (
     <>
       <Head>
@@ -31,7 +31,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <Box ref={scrollRef} >
+        <Box >
 
           <HeroSection />
           <Landing1/>

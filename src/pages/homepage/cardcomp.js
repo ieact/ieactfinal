@@ -10,9 +10,9 @@ import { Box } from "@mui/system";
 const useStyles = makeStyles((theme) => ({
   card: {
     position: "sticky",
-    border: "1px solid #ccc",
+    border: "10px solid linear-gradient(to right, red, purple)", // Set the border to the linear gradient
     boxShadow: "5px 5px 5px rgba(0, 0, 0, 0.1)",
-    backgroundColor: "white",
+    background: "white", // Change background to the linear gradient
     color: "#333",
     padding: "40px",
     borderRadius: "10px",

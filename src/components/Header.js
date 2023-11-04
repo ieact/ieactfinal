@@ -48,7 +48,7 @@ export default function Header() {
 
   const DrawerHeader = styled("div")(({ theme }) => ({
     display: "flex",
-    alignItems: "center",
+    // alignItems: "center",
     padding: theme.spacing(0, 1),
     // necessary for content to be below app bar
     ...theme.mixins.toolbar,
@@ -99,9 +99,9 @@ export default function Header() {
                       alignItems: "center",
                     }}
                   >
-                    IEACT{" "}
+                    IEACT
                   </Typography>
-                </Box>{" "}
+                </Box>
               </Hidden>
               <Hidden lgDown>
                 <Box
@@ -113,9 +113,9 @@ export default function Header() {
                   }}
                 >
                   <Typography variant="h6" sx={{ color: "#d9a60b" }}>
-                    INDRA EDUCATIONAL AND CHARITABLE TRUST{" "}
+                    INDRA EDUCATIONAL AND CHARITABLE TRUST
                   </Typography>
-                </Box>{" "}
+                </Box>
               </Hidden>
             </Stack>
           </Grid>
@@ -142,7 +142,9 @@ export default function Header() {
                 <Drawer anchor="left" open={menuOpen} onClose={toggleMenu}>
                   {/* Side menu items for small screens */}
                   <DrawerHeader>
+                    <Typography variant="h6">IEACT</Typography>
                     <IconButton onClick={handleDrawerClose}>
+                  
                       {" "}
                       <ChevronLeftIcon />
                       {/* // {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon/>} */}
@@ -156,11 +158,11 @@ export default function Header() {
                   >
                     <Stack direction={"column"}>
                       <Link href="/">
-                        <Button onClick={toggleMenu}>Home</Button>
+                        <Button onClick={handleDrawerClose}>Home</Button>
                       </Link>
                       <Divider />
                       <Link href="/aboutus">
-                        <Button onClick={toggleMenu}>About us</Button>
+                        <Button onClick={handleDrawerClose}>About us</Button>
                       </Link>{" "}
                       <Divider />
                       <Button
@@ -173,27 +175,27 @@ export default function Header() {
                         <div style={{ paddingLeft: "20px" }}>
                           <Stack direction={"column"}>
                             <Link href="/projects/nsdc/NSDC">
-                              <Button onClick={handleSubMenuClose}>NSDC</Button>
+                              <Button onClick={handleDrawerClose}>NSDC</Button>
                             </Link>
                             <Link href="/projects/tnsdc/TNSDC">
-                              <Button onClick={handleSubMenuClose}>
+                              <Button onClick={handleDrawerClose}>
                                 {" "}
                                 TNSTC
                               </Button>
                             </Link>
                             <Link href="/projects/moma/MoMA">
-                              <Button onClick={handleSubMenuClose}>
+                              <Button onClick={handleDrawerClose}>
                                 Day-NULM
                               </Button>
                             </Link>
                             <Link href="/projects/ddugky/DDU">
-                              <Button onClick={handleSubMenuClose}>
+                              <Button onClick={handleDrawerClose}>
                                 {" "}
                                 DDU-GKY
                               </Button>
                             </Link>
                             <Link href="/projects/moma/MoMA">
-                              <Button onClick={handleSubMenuClose}>MoMA</Button>
+                              <Button onClick={handleDrawerClose}>MoMA</Button>
                             </Link>{" "}
                           </Stack>
                         </div>
@@ -209,12 +211,12 @@ export default function Header() {
                         <div style={{ paddingLeft: "20px" }}>
                           <Stack direction={"column"}>
                             <Link href="/courses/ithelp/Ithelp">
-                              <Button onClick={handleSubMenuClose}>
+                              <Button onClick={handleDrawerClose}>
                                 IT Help Assistant
                               </Button>
                             </Link>
                             <Link href="/courses/assistantElect/Electrician">
-                              <Button onClick={handleSubMenuClose}>
+                              <Button onClick={handleDrawerClose}>
                                 AssitantElectrician
                               </Button>
                             </Link>
@@ -233,11 +235,11 @@ export default function Header() {
                       )}{" "}
                       <Divider />
                       <Link href="/aboutus">
-                        <Button onClick={toggleMenu}>Affiliation-PIA</Button>{" "}
+                        <Button onClick={handleDrawerClose}>Affiliation-PIA</Button>{" "}
                       </Link>{" "}
                       <Divider />
                       <Link href="/contactform/contact">
-                        <Button onClick={toggleMenu}>Contact Us</Button>
+                        <Button onClick={handleDrawerClose}>Contact Us</Button>
                       </Link>{" "}
                       <Divider />
                     </Stack>

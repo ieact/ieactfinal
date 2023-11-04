@@ -76,7 +76,7 @@ const ContactForm = () => {
             color: "primary.main",
           }}
         >
-          Contact Us
+          
         </Typography>
       </Box>
     </Box>
