@@ -72,7 +72,7 @@ export default function Header() {
 
   const isMobile = useMediaQuery("(max-width:1100px)");
   const imageWidth = isMobile ? 900 : 1000;
-  const imageHeight = isMobile ? 1000 : 1100;
+  const imageHeight = isMobile ? 1000 : 1200;
   const isMobile1 = useMediaQuery(theme.breakpoints.down('sm'));
   const order = isMobile1 ? 2 : 1;
 
@@ -266,7 +266,7 @@ export default function Header() {
 
 
 {/* large screen toolbar */}
-          <Hidden  mdDown width={isMobile} >
+          <Hidden  lgDown width={isMobile} >
             <Grid>
               <Toolbar>
                 <Stack

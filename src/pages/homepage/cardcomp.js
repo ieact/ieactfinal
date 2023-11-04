@@ -112,7 +112,7 @@ const YourComponent = () => {
                   <Typography variant="h5" component="div">
                     {item.title}
                   </Typography>
-                  <Typography variant="subtitle1" color="secondary">
+                  <Typography variant="subtitle1" color="#757575">
                     {item.description}
                   </Typography>
                 </CardContent>

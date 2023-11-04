@@ -20,21 +20,24 @@ const sscImg = [
   {
     id: 1,
     imageUrl: "/classroom2.jpg",
-    description: "we provide free skill development training to unemployed individuals.",
+    description:
+      "we provide free skill development training to unemployed individuals.",
     alt: "Class1",
     onHoverdes: "Our Classroom",
   },
   {
     id: 2,
     imageUrl: "/skill1.jpg",
-    description:  "Empowering the unemployed through skill development. We bridge the gap between aspirations and opportunities.",
+    description:
+      "Empowering the unemployed through skill development. We bridge the gap between aspirations and opportunities.",
     alt: "Class2",
     onHoverdes: "Skill Training",
   },
   {
     id: 3,
     imageUrl: "/interviewp.jpg",
-    description: "We also arrange job interviews and placements, helping you start your career journey.",
+    description:
+      "We also arrange job interviews and placements, helping you start your career journey.",
     alt: "Class3",
     onHoverdes: "Interview",
   },
@@ -61,35 +64,59 @@ const Intro = () => {
       }}
     >
       <Container maxWidth={"xl"}>
-        <Grid container spacing={2} display="flex" flexWrap="wrap" justifyContent={"center"}>
+        <Grid
+          container
+          spacing={2}
+          display="flex"
+          flexWrap="wrap"
+          justifyContent={"center"}
+        >
           <Grid item xs={12}>
-            <Typography variant="h4" textAlign={"center"} sx={{color:"black"}} lineHeight={1.5}>
-            Free Skill Development Programs
-
+            <Typography
+              variant="h4"
+              textAlign={"center"}
+              sx={{ color: "#757575" }}
+              lineHeight={1.5}
+            >
+              Free Skill Development Programs
             </Typography>
             <Typography variant="h3" textAlign={"center"} lineHeight={1.5}>
-            Bridging the Gap: Skill Development and Employment
+              Bridging the Gap: Skill Development and Employment
             </Typography>
           </Grid>
-          
-            {sscImg.map((item) => (
-              <Grid item sx={12} md={6}lg={3}  >
-              <Card sx={{ minWidth: 300,justifyContent:"center",alignItems:"center" }} >
+
+          {sscImg.map((item) => (
+            <Grid item sx={12} md={6} lg={3}>
+              <Card
+                sx={{
+                  minWidth: 300,
+                  minHeight:600,
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
                 <CardHeader title={item.onHoverdes} />
                 <CardMedia
                   component="img"
-                  height="300"
+                  height="360"
                   src={item.imageUrl}
                   alt="Paella dish"
+                  sx={{
+                    display: "flex",
+                    justifyContent: "center",
+                    height: "auto",
+                    maxHeight: "100%",
+                    maxWidth: "100%",
+                  }}
                 />
                 <CardContent>
-                  <Typography variant="h6" sx={{textAlign:"center"}}>
+                  <Typography variant="h6" sx={{ textAlign: "center" }}>
                     {item.description}
                   </Typography>
                 </CardContent>
-              </Card></Grid>
-            ))}
-          
+              </Card>
+            </Grid>
+          ))}
         </Grid>
       </Container>
     </Box>

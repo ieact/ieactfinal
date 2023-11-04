@@ -30,9 +30,9 @@ const HeroSection = () => {
       >
         <Typography
           position="absolute"
-          
+          variant="h2"
           sx={{
-            fontSize: { xs: 42, md: 86 },
+            // fontSize: { xs: 42, md: 86 },
             color: "primary.main",
           }}
         >
