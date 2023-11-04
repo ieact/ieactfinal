@@ -90,7 +90,7 @@ const Intro = () => {
               <Card
                 sx={{
                   minWidth: 300,
-                  minHeight:600,
+                  minHeight:'80vh',
                   justifyContent: "center",
                   alignItems: "center",
                 }}

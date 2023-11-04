@@ -92,7 +92,7 @@ const YourComponent = () => {
     <Box
       sx={{ background: " linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%)",}}
     >
-      <Grid item xs={12} sx={{ pt: 2 }}>
+      <Grid item xs={12}  sx={{ pt: 2 }} >
         <Typography variant="h3" align="center">
           Why Choose Us
         </Typography>
@@ -101,7 +101,7 @@ const YourComponent = () => {
         {choose.map((item) => (
           <Card key={item.id} className={classes.card}>
             <Grid container>
-              <Grid item xs={12} lg={6}>
+              <Grid item xs={12} md={6} lg={6}>
                 <CardContent
                   sx={{
                     display: "column",
@@ -117,7 +117,7 @@ const YourComponent = () => {
                   </Typography>
                 </CardContent>
               </Grid>
-              <Grid item xs={12} lg={6}>
+              <Grid item xs={12} md={6} lg={6}>
                 <Box className={classes.imageBox}>
                   <Image
                     src={item.imageUrl}
