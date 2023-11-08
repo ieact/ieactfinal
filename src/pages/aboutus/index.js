@@ -21,7 +21,7 @@ const About = () => {
         sx={{
           position: "relative",
           background: `url("/hero.jpg") center / cover`,
-          minHeight: { xs: 500, sm: 500, md: 800, lg: 789 },
+          minHeight: { xs: 500, sm: 500, md: 600, lg: 789 },
         }}
       >
         <Box

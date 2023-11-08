@@ -106,7 +106,7 @@ const SscLanding = () => {
 
   return (
     <div>
-      <Box sx={{ pb: 3,
+      <Box sx={{ py: 5,
       }}  >
         <div
           className={`${classes.scrollEffectText} ${
@@ -118,7 +118,7 @@ const SscLanding = () => {
             sx={{
               textAlign: "center",
               justifyContent: "center",
-              pt: "1.5rem",
+              lineHeight:2,
               color: "black",
             }}
           >

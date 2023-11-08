@@ -15,11 +15,9 @@ import Landing1 from "./homepage/Landing1";
 // import useScrollSnap from "react-use-scroll-snap";
 import { Box } from "@mui/system";
 
-
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
-
   // const scrollRef = useRef(null);
   // useScrollSnap({ ref: scrollRef, duration: 50, delay: 20 });
   return (
@@ -31,18 +29,15 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <Box >
-
+        <Box>
           <HeroSection />
-          <Landing1/>
-          
-        
-          <LandingSection/>
+          <Landing1 />
+
+          <LandingSection />
           <YourComponent />
           <SscLanding />
-          <Course/>
+          <Course />
           {/* <CenteredText /> */}
-          
         </Box>
       </main>
     </>

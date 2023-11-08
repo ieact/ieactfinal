@@ -61,8 +61,7 @@ const GeneralDuty = () => {
       <Box
         sx={{
           background: "linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%)",
-          pt: 6,
-        }}
+          py:6        }}
       >
         <Container maxWidth="xl">
           <Grid
@@ -73,7 +72,7 @@ const GeneralDuty = () => {
           >
             <Grid item xs={12}>
               <Typography variant="h3" textAlign={"center"}>
-                Generalduty Assistant
+                General Duty Assistant
               </Typography>
             </Grid>
 
@@ -153,13 +152,9 @@ const GeneralDuty = () => {
                 ))}
               </Stack>
               <Box
-                sx={{
-                  background:
-                    "linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%)",
-                }}
               >
                 <Typography variant="h6"></Typography>
-                <Typography variant="body1" lineHeight={2}>
+                <Typography variant="subtitle1" lineHeight={2}>
                   General Duty Assistant-Healthcare (GDA) are also known as
                   &apos;Nursing Care Assistant,&apos; &apos;Nursing
                   Assistant,&apos; &apos;Nursing Aide,&apos; &apos;Bedside
@@ -169,7 +164,7 @@ const GeneralDuty = () => {
                 <Typography variant="h4" lineHeight={1.5}>
                   Brief Description
                 </Typography>
-                <Typography variant="body1" lineHeight={2}>
+                <Typography variant="subtitle1" lineHeight={2}>
                   Individual on the job provides patient care and helps maintain
                   a suitable environment. Some of the key responsibilities of
                   the General Duty Assistant are to provide the patient&quot;s
@@ -179,7 +174,7 @@ const GeneralDuty = () => {
                 <Typography variant="h4" lineHeight={1.5}>
                   Personal Attributes:
                 </Typography>
-                <Typography variant="body1" lineHeight={2}>
+                <Typography variant="subtitle1" lineHeight={2}>
                   This job requires the individual to work in collaboration with
                   Doctors and Nurses and other healthcare providers and deliver
                   the healthcare services as suggested by them. The individual

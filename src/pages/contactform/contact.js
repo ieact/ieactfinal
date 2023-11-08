@@ -44,15 +44,16 @@ const ContactForm = () => {
 
   return (
     <>
-
 <Box
+sx={{background: "linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%)"}}>
+      <Box
       width="100vw"
       display="flex"
       justifyContent="flex-end"
       sx={{
         position: "relative",
         background: `url("/contact.jpg") center / cover`,
-        minHeight: { xs: 500, sm: 500, md: 800, lg: 789 },
+        minHeight: { xs: 500, sm: 500, md: 600, lg: 789 },
       }}
     >
       <Box
@@ -115,9 +116,6 @@ const ContactForm = () => {
          
         <Grid item xs={12} sm={12} md={6} lg={6}>
   <Typography variant="h4" sx={{ lineHeight: "2" }}>IEACT Location</Typography>
-  {/* <Typography variant="h5" sx={{ lineHeight: "2" }}>Call us: 9am - 6pm</Typography>
-  <Typography variant="h5" sx={{ lineHeight: "2" }}>Phone: 9874563214</Typography>
-  <Typography variant="h5" sx={{ lineHeight: "2" }}>Email: ieact23@gmail.com</Typography> */}
   <iframe
     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.1002572415523!2d78.70943317575289!3d10.879978757273687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baaf68dc1a0f791%3A0x95da99f9045e4fa9!2sSATHRIYA%20TOWER!5e0!3m2!1sta!2sin!4v1698321606519!5m2!1sta!2sin"
     width="100%"  
@@ -125,7 +123,7 @@ const ContactForm = () => {
     allowfullscreen=""
     loading="lazy"
     referrerpolicy="no-referrer-when-downgrade"
-    style={{ border: "none" }} 
+    style={{ border: "none",borderRadius:15 }} 
   ></iframe>
 </Grid>
 
@@ -182,7 +180,7 @@ const ContactForm = () => {
         <Button type="submit" variant="contained" sx={{ m: 1}} color="primary">
           Submit
         </Button>
-      </form> </Grid> </Grid></Container>
+      </form> </Grid> </Grid></Container></Box>
     </>
   );
 };

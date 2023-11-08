@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from 'react';
+import { useInView } from 'react-intersection-observer';
 import {
   Box,
   Card,
@@ -7,19 +8,14 @@ import {
   Typography,
   Container,
   CardContent,
-  Paper,
-  Avatar,
-  useMediaQuery,
-  useTheme,
-} from "@mui/material";
-import CardHeader from "@mui/material/CardHeader";
-import { red } from "@mui/material/colors";
-import Image from "next/image";
+} from '@mui/material';
+import CardHeader from '@mui/material/CardHeader';
+
 
 const sscImg = [
   {
     id: 1,
-    imageUrl: "/classroom2.jpg",
+    imageUrl: "/classroom3.jpg",
     description:
       "we provide free skill development training to unemployed individuals.",
     alt: "Class1",
@@ -29,7 +25,8 @@ const sscImg = [
     id: 2,
     imageUrl: "/skill1.jpg",
     description:
-      "Empowering the unemployed through skill development. We bridge the gap between aspirations and opportunities.",
+      "Empowering the unemployed through skill development. ",
+      // We bridge the gap between aspirations and opportunities.
     alt: "Class2",
     onHoverdes: "Skill Training",
   },
@@ -37,13 +34,13 @@ const sscImg = [
     id: 3,
     imageUrl: "/interviewp.jpg",
     description:
-      "We also arrange job interviews and placements, helping you start your career journey.",
+      "Arranging interviews and placements to launch your career.",
     alt: "Class3",
     onHoverdes: "Interview",
   },
   {
     id: 4,
-    imageUrl: "/job.jpg",
+    imageUrl: "/job1.jpg",
     description: " Join us to unlock your potential and transform your life.",
     alt: "Class4",
     onHoverdes: "Placed In Good Job",
@@ -51,13 +48,35 @@ const sscImg = [
 ];
 
 const Intro = () => {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.2, 
+  });
+
+  const [fontSize, setFontSize] = useState(0);
+
+  const handleScroll = () => {
+    if (inView) {
+      setFontSize(48);
+    } else {
+      setFontSize(25);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
   return (
     <Box
       sx={{
         // height: "230vh",
         minHeight: { xs: 580, sm: 530, md: 800, lg: "100vh" },
-        pt: "76px",
-        bgcolor: "background.paper",
+        py:5,
+        // bgcolor: "background.paper",
+       background: `linear-gradient(to right, #f09819, #edde5d)`,
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
@@ -73,14 +92,16 @@ const Intro = () => {
         >
           <Grid item xs={12}>
             <Typography
-              variant="h4"
+              // variant="h4"
               textAlign={"center"}
               sx={{ color: "#757575" }}
               lineHeight={1.5}
+              ref={ref}
+              style={{ fontSize: `${fontSize}px` }}
             >
               Free Skill Development Programs
             </Typography>
-            <Typography variant="h3" textAlign={"center"} lineHeight={1.5}>
+            <Typography variant="h3" textAlign={"center"} sx={{color:"#1A1A71"}} lineHeight={1.5}>
               Bridging the Gap: Skill Development and Employment
             </Typography>
           </Grid>
@@ -90,9 +111,10 @@ const Intro = () => {
               <Card
                 sx={{
                   minWidth: 300,
-                  minHeight:'80vh',
+                  maxHeight:'300',
                   justifyContent: "center",
                   alignItems: "center",
+                  backgroundColor: '#f5e7e2' // Replace with your desired warm white color
                 }}
               >
                 <CardHeader title={item.onHoverdes} />

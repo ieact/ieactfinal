@@ -31,7 +31,7 @@ const data = [
       id: 2,
       imageUrl: "/courses/electri.svg",
       description: "Assitant Electrician",
-      link: "//courses/assistantElect/Electrician",
+      link: "/courses/assistantElect/Electrician",
       alt: "Assitant Electrician image",
     },
     {
@@ -93,7 +93,7 @@ const Course = () => {
         alignItems={"center"}
         sx={{
           background: " linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%)",
-          height: { xs: 1700, sm: 1200, md: 1000, lg: 789 },
+          height: { xs: 1700, sm: 1200, md: 1000, lg: 789 },py:5
         }}
       >
         <section id="sectioncourse">

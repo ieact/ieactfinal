@@ -54,7 +54,7 @@ const HandsetRepair = () => {
       <Box
         sx={{
           background: "linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%)",
-          pt: 6,
+          py:6
         }}
       >
         <Container maxWidth="xl">

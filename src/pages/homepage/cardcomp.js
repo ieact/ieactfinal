@@ -90,9 +90,12 @@ const YourComponent = () => {
 
   return (
     <Box
-      sx={{ background: " linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%)",}}
+      sx={{
+        background: " linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%)",
+        paddingBottom: "30px",py:5
+      }}
     >
-      <Grid item xs={12}  sx={{ pt: 2 }} >
+      <Grid item xs={12} >
         <Typography variant="h3" align="center">
           Why Choose Us
         </Typography>

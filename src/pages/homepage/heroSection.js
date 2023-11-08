@@ -10,7 +10,7 @@ const HeroSection = () => {
       justifyContent="flex-end"
       sx={{
         position: "relative",
-        background: `url("/hero.jpg") center / cover`,
+        background: `url("/herobg.jpg") center / cover`,
         // minHeight: { xs: 500, sm: 500, md: 600, lg: 789 },
       }}
     >
@@ -25,7 +25,7 @@ const HeroSection = () => {
           justifyContent: "center",
           alignItems: "center",
           textAlign: "center",
-          backgroundColor: "rgba(0, 0, 0, 0.7)",
+          backgroundColor: "rgba(0, 0, 0, 0.72)",
         }}
       >
         <Typography
